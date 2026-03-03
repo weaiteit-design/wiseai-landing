@@ -1,26 +1,148 @@
 @import "tailwindcss";
 
+/* ─── TheWiseAI Design Tokens (from delta-app/src/theme/tokens.ts) ─── */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Backgrounds */
+  --wise-bg: #06060B;
+  --wise-surface1: #0D0D14;
+  --wise-surface2: #14141F;
+  --wise-surface3: #1C1C2B;
+
+  /* Accents */
+  --wise-accent: #6366F1;
+  --wise-accent-light: #818CF8;
+  --wise-accent-dim: rgba(99, 102, 241, 0.12);
+  --wise-accent-glow: rgba(99, 102, 241, 0.25);
+  --wise-purple: #7C3AED;
+  --wise-cyan: #06B6D4;
+
+  /* Text */
+  --wise-text1: #F0F0F5;
+  --wise-text2: #9CA3AF;
+  --wise-text3: #6B7280;
+  --wise-text4: #374151;
+
+  /* Borders */
+  --wise-glass-border: rgba(99, 102, 241, 0.12);
+  --wise-glass-border-light: rgba(255, 255, 255, 0.06);
+  --wise-divider: rgba(255, 255, 255, 0.04);
+
+  /* Status */
+  --wise-success: #10B981;
+  --wise-error: #EF4444;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Colors */
+  --color-wise-bg: var(--wise-bg);
+  --color-wise-surface1: var(--wise-surface1);
+  --color-wise-surface2: var(--wise-surface2);
+  --color-wise-surface3: var(--wise-surface3);
+  --color-wise-accent: var(--wise-accent);
+  --color-wise-accent-light: var(--wise-accent-light);
+  --color-wise-accent-dim: var(--wise-accent-dim);
+  --color-wise-accent-glow: var(--wise-accent-glow);
+  --color-wise-purple: var(--wise-purple);
+  --color-wise-cyan: var(--wise-cyan);
+  --color-wise-text1: var(--wise-text1);
+  --color-wise-text2: var(--wise-text2);
+  --color-wise-text3: var(--wise-text3);
+  --color-wise-text4: var(--wise-text4);
+  --color-wise-glass-border: var(--wise-glass-border);
+  --color-wise-glass-border-light: var(--wise-glass-border-light);
+  --color-wise-divider: var(--wise-divider);
+  --color-wise-success: var(--wise-success);
+  --color-wise-error: var(--wise-error);
+
+  /* Font */
+  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
+
+  /* Animations */
+  --animate-glow-pulse: glow-pulse 2.5s ease-in-out infinite;
+  --animate-fade-in: fade-in 0.6s ease-out forwards;
+  --animate-slide-up: slide-up 0.6s ease-out forwards;
+  --animate-float: float 3s ease-in-out infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Keyframes ─── */
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.4; }
 }
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ─── Base Styles ─── */
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--wise-bg);
+  color: var(--wise-text1);
+  font-family: var(--font-inter), "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Glass Card Utility ─── */
+
+.glass-card {
+  background: rgba(13, 13, 20, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--wise-glass-border-light);
+  border-radius: 16px;
+}
+
+.glass-card:hover {
+  border-color: rgba(99, 102, 241, 0.2);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.12);
+}
+
+/* ─── Gradient Text Utility ─── */
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--wise-accent) 0%, var(--wise-text1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Selection ─── */
+
+::selection {
+  background: rgba(99, 102, 241, 0.3);
+  color: var(--wise-text1);
+}
+
+/* ─── Scrollbar (subtle) ─── */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--wise-surface3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--wise-text4);
 }

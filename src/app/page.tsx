@@ -11,7 +11,7 @@ export default function Home() {
       <GlowOrb position="top-right" color="indigo" />
       <GlowOrb position="bottom-left" color="purple" />
 
-      <div className="relative z-10 mx-auto max-w-5xl px-5 pt-16 pb-8 sm:px-8 lg:pt-24">
+      <div className="relative z-10 mx-auto max-w-5xl px-3 pt-16 pb-8 sm:px-8 lg:pt-24">
         <Hero />
         <Features />
         <FAQ />

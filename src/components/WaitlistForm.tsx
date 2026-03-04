@@ -68,8 +68,8 @@ export default function WaitlistForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-md">
-      <div className="flex flex-col gap-3 sm:flex-row">
+    <form onSubmit={handleSubmit} className="w-full max-w-2xl">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
         <input
           type="email"
           value={email}
@@ -78,7 +78,7 @@ export default function WaitlistForm() {
             if (status === "error") setStatus("idle");
           }}
           placeholder="Enter your email address"
-          className="h-12 flex-1 rounded-xl border border-[var(--wise-glass-border)] bg-[var(--wise-surface2)] px-4 text-sm text-[var(--wise-text1)] placeholder:text-[var(--wise-text3)] outline-none transition-all duration-200 focus:border-[var(--wise-accent)] focus:ring-2 focus:ring-[rgba(99,102,241,0.25)]"
+          className="h-[90px] sm:h-[84px] flex-1 rounded-2xl border-2 border-[rgba(99,102,241,0.5)] bg-[var(--wise-surface2)] px-8 text-xl text-[var(--wise-text1)] placeholder:text-[var(--wise-text1)] placeholder:text-lg outline-none transition-all duration-200 animate-[input-glow_2.5s_ease-in-out_infinite] focus:border-[var(--wise-accent)] focus:ring-2 focus:ring-[rgba(99,102,241,0.4)] focus:shadow-[0_0_60px_rgba(99,102,241,0.5),0_0_120px_rgba(99,102,241,0.2)]"
           disabled={status === "loading"}
           autoComplete="email"
         />

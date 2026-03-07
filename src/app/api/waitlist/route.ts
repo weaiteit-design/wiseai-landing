@@ -1,10 +1,29 @@
-import { NextRequest, NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
+// ─── Rate Limiting ───────────────────────────────────────────
 
 // In-memory rate limiting (resets on deploy/restart)
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
-const RATE_LIMIT = 5;
+
+// Allow 20 requests per hour per IP
+const RATE_LIMIT = 20;
 const RATE_WINDOW = 60 * 60 * 1000; // 1 hour
+
+function isRateLimited(ip: string): boolean {
+  // Disable rate limiting during development
+  if (process.env.NODE_ENV === "development") {
+    return false;
+  }
+
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+
+  if (!entry || now > entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_WINDOW });
+    return false;
+  }
+
+  entry.count++;
+  return entry.count > RATE_LIMIT;
+}
 
 function isRateLimited(ip: string): boolean {
   const now = Date.now();

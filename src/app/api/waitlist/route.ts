@@ -1,27 +1,43 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
 
+// ─── Rate Limiting ───────────────────────────────────────────
+
 // In-memory rate limiting (resets on deploy/restart)
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
-const RATE_LIMIT = 5;
+
+// Allow 100 requests per hour per IP
+const RATE_LIMIT = 100;
 const RATE_WINDOW = 60 * 60 * 1000; // 1 hour
 
 function isRateLimited(ip: string): boolean {
+  // Disable rate limiting during development
+  if (process.env.NODE_ENV === "development") {
+    return false;
+  }
+
   const now = Date.now();
   const entry = rateLimitMap.get(ip);
+
   if (!entry || now > entry.resetAt) {
     rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_WINDOW });
     return false;
   }
+
   entry.count++;
   return entry.count > RATE_LIMIT;
 }
 
+// ─── Email Validation ─────────────────────────────────────────
+
 function isValidEmail(email: string): boolean {
   const re =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+
   return re.test(email) && email.length <= 254;
 }
+
+// ─── API Route ────────────────────────────────────────────────
 
 export async function POST(request: NextRequest) {
   try {
@@ -53,15 +69,18 @@ export async function POST(request: NextRequest) {
 
     const { error } = await supabase
       .from("waitlist")
-      .insert({
-        email,
-        source: "landing_page",
-        utm_source,
-        utm_medium,
-        utm_campaign,
-      });
+      .insert([
+        {
+          email,
+          source: "landing_page",
+          utm_source,
+          utm_medium,
+          utm_campaign,
+        },
+      ]);
 
     if (error) {
+      // Handle duplicate email
       if (error.code === "23505") {
         return NextResponse.json(
           {
@@ -71,7 +90,9 @@ export async function POST(request: NextRequest) {
           { status: 200 }
         );
       }
+
       console.error("Waitlist insert error:", error);
+
       return NextResponse.json(
         { error: "Something went wrong. Please try again." },
         { status: 500 }

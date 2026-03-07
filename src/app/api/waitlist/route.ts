@@ -3,8 +3,8 @@
 // In-memory rate limiting (resets on deploy/restart)
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 
-// Allow 20 requests per hour per IP
-const RATE_LIMIT = 20;
+// Allow 100 requests per hour per IP
+const RATE_LIMIT = 100;
 const RATE_WINDOW = 60 * 60 * 1000; // 1 hour
 
 function isRateLimited(ip: string): boolean {

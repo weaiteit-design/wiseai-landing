@@ -16,7 +16,7 @@ export default function Hero() {
               alt="WiseAI"
               width={500}
               height={500}
-              className="h-28 w-auto drop-shadow-[0_0_24px_rgba(249,115,22,0.25)] sm:h-32"
+              className="h-44 w-auto drop-shadow-[0_0_32px_rgba(249,115,22,0.3)] sm:h-56 lg:h-64"
               priority
             />
           </div>

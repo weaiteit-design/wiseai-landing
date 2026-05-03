@@ -10,13 +10,13 @@ export default function Hero() {
         {/* Left: Content */}
         <div className="flex flex-1 flex-col items-center text-center lg:items-start lg:text-left">
           {/* Logo */}
-          <div className="mb-6 animate-fade-in">
+          <div className="mb-5 animate-fade-in">
             <Image
               src="/wiseai-logo.png"
               alt="WiseAI"
               width={500}
               height={500}
-              className="h-44 w-auto drop-shadow-[0_0_32px_rgba(249,115,22,0.3)] sm:h-56 lg:h-64"
+              className="h-24 w-auto drop-shadow-[0_0_24px_rgba(249,115,22,0.25)] sm:h-28 lg:h-32"
               priority
             />
           </div>

@@ -38,7 +38,7 @@ export default function Nav() {
             alt="WiseAI"
             width={500}
             height={500}
-            className="h-12 w-auto sm:h-14"
+            className="h-16 w-auto sm:h-20"
             priority
           />
         </Link>

@@ -10,35 +10,40 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "TheWiseAI — Master AI Before It Masters You",
+  title: "WiseAI — Master AI Before It Masters You",
   description:
-    "The all-in-one app for AI fluency. Personalized news from 15+ sources, interactive micro-lessons, 53+ tool comparisons, and gamified learning. Join the waitlist.",
+    "WiseAI is the all-in-one app for AI fluency: personalized AI news from 30+ sources, interactive micro-lessons, 53+ tool comparisons, and gamified learning. 15 minutes a day to stay ahead.",
   keywords: [
     "AI learning app",
     "learn artificial intelligence",
-    "AI news",
+    "AI news app",
     "AI tools directory",
     "Duolingo for AI",
     "AI education",
-    "TheWiseAI",
+    "WiseAI",
     "AI literacy",
     "micro-lessons AI",
+    "ChatGPT lessons",
+    "Claude lessons",
   ],
-  authors: [{ name: "TheWiseAI" }],
-  creator: "TheWiseAI",
-  metadataBase: new URL("https://thewiseai.app"),
+  authors: [{ name: "WiseAI" }],
+  creator: "WiseAI",
+  metadataBase: new URL("https://wiseai.app"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "TheWiseAI — Master AI Before It Masters You",
+    title: "WiseAI — Master AI Before It Masters You",
     description:
-      "The all-in-one app for AI fluency. Personalized news, bite-sized lessons, 53+ tool comparisons, and gamified learning.",
-    url: "https://thewiseai.app",
-    siteName: "TheWiseAI",
+      "Personalized AI news, bite-sized micro-lessons, 53+ tool comparisons, and gamified learning. Master AI in 15 minutes a day.",
+    url: "https://wiseai.app",
+    siteName: "WiseAI",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "TheWiseAI - Your Intelligence, Amplified",
+        alt: "WiseAI — Your AI Learning Companion",
       },
     ],
     locale: "en_US",
@@ -46,9 +51,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "TheWiseAI — Master AI Before It Masters You",
+    title: "WiseAI — Master AI Before It Masters You",
     description:
-      "The all-in-one app for AI fluency. Join the waitlist.",
+      "The all-in-one app for AI fluency. Get the app now.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -56,7 +61,11 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/wiseai-icon.png", type: "image/png" },
+    ],
+    apple: "/wiseai-icon.png",
   },
 };
 

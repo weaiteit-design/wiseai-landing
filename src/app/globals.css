@@ -1,40 +1,44 @@
 @import "tailwindcss";
 
-/* ─── TheWiseAI Design Tokens (from delta-app/src/theme/tokens.ts) ─── */
+/* ─── WiseAI Design Tokens (synced with app: src/theme/tokens.ts) ─── */
 
 :root {
-  /* Backgrounds */
-  --wise-bg: #06060B;
-  --wise-surface1: #0D0D14;
-  --wise-surface2: #14141F;
-  --wise-surface3: #1C1C2B;
+  /* Backgrounds — deep navy (matches app dark theme) */
+  --wise-bg: #0B1A2B;
+  --wise-surface1: #0F2337;
+  --wise-surface2: #132D44;
+  --wise-surface3: #1A3A54;
 
-  /* Accents */
-  --wise-accent: #6366F1;
-  --wise-accent-light: #818CF8;
-  --wise-accent-dim: rgba(99, 102, 241, 0.12);
-  --wise-accent-glow: rgba(99, 102, 241, 0.25);
-  --wise-purple: #7C3AED;
-  --wise-cyan: #06B6D4;
+  /* Accent — vibrant orange (interactive elements, CTAs) */
+  --wise-accent: #F97316;
+  --wise-accent-light: #FB923C;
+  --wise-accent-dim: rgba(249, 115, 22, 0.12);
+  --wise-accent-glow: rgba(249, 115, 22, 0.25);
 
-  /* Text */
+  /* Secondary — deep turquoise (gradients, highlights) */
+  --wise-secondary: #0D9488;
+  --wise-secondary-light: #14B8A6;
+  --wise-secondary-dim: rgba(13, 148, 136, 0.12);
+  --wise-secondary-glow: rgba(13, 148, 136, 0.25);
+
+  /* Text — crisp hierarchy */
   --wise-text1: #F0F0F5;
   --wise-text2: #9CA3AF;
   --wise-text3: #6B7280;
-  --wise-text4: #374151;
+  --wise-text4: #4B5563;
 
   /* Borders */
-  --wise-glass-border: rgba(99, 102, 241, 0.12);
-  --wise-glass-border-light: rgba(255, 255, 255, 0.06);
-  --wise-divider: rgba(255, 255, 255, 0.04);
+  --wise-glass-border: rgba(255, 255, 255, 0.15);
+  --wise-glass-border-light: rgba(255, 255, 255, 0.08);
+  --wise-divider: rgba(255, 255, 255, 0.06);
 
   /* Status */
   --wise-success: #10B981;
+  --wise-warning: #F59E0B;
   --wise-error: #EF4444;
 }
 
 @theme inline {
-  /* Colors */
   --color-wise-bg: var(--wise-bg);
   --color-wise-surface1: var(--wise-surface1);
   --color-wise-surface2: var(--wise-surface2);
@@ -43,8 +47,8 @@
   --color-wise-accent-light: var(--wise-accent-light);
   --color-wise-accent-dim: var(--wise-accent-dim);
   --color-wise-accent-glow: var(--wise-accent-glow);
-  --color-wise-purple: var(--wise-purple);
-  --color-wise-cyan: var(--wise-cyan);
+  --color-wise-secondary: var(--wise-secondary);
+  --color-wise-secondary-light: var(--wise-secondary-light);
   --color-wise-text1: var(--wise-text1);
   --color-wise-text2: var(--wise-text2);
   --color-wise-text3: var(--wise-text3);
@@ -53,12 +57,11 @@
   --color-wise-glass-border-light: var(--wise-glass-border-light);
   --color-wise-divider: var(--wise-divider);
   --color-wise-success: var(--wise-success);
+  --color-wise-warning: var(--wise-warning);
   --color-wise-error: var(--wise-error);
 
-  /* Font */
   --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
 
-  /* Animations */
   --animate-glow-pulse: glow-pulse 2.5s ease-in-out infinite;
   --animate-fade-in: fade-in 0.6s ease-out forwards;
   --animate-slide-up: slide-up 0.6s ease-out forwards;
@@ -68,8 +71,8 @@
 /* ─── Keyframes ─── */
 
 @keyframes glow-pulse {
-  0%, 100% { opacity: 0.15; }
-  50% { opacity: 0.4; }
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.5; }
 }
 
 @keyframes fade-in {
@@ -100,22 +103,23 @@ body {
 /* ─── Glass Card Utility ─── */
 
 .glass-card {
-  background: rgba(13, 13, 20, 0.7);
+  background: rgba(15, 35, 55, 0.7);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid var(--wise-glass-border-light);
   border-radius: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .glass-card:hover {
-  border-color: rgba(99, 102, 241, 0.2);
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.12);
+  border-color: rgba(249, 115, 22, 0.3);
+  box-shadow: 0 0 24px rgba(249, 115, 22, 0.12);
 }
 
-/* ─── Gradient Text Utility ─── */
+/* ─── Gradient Text Utility (orange → turquoise) ─── */
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--wise-accent) 0%, var(--wise-text1) 100%);
+  background: linear-gradient(135deg, var(--wise-accent) 0%, var(--wise-secondary-light) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -124,11 +128,11 @@ body {
 /* ─── Selection ─── */
 
 ::selection {
-  background: rgba(99, 102, 241, 0.3);
+  background: rgba(249, 115, 22, 0.3);
   color: var(--wise-text1);
 }
 
-/* ─── Scrollbar (subtle) ─── */
+/* ─── Scrollbar ─── */
 
 ::-webkit-scrollbar {
   width: 6px;
@@ -145,4 +149,64 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--wise-text4);
+}
+
+/* ─── Prose for legal pages (privacy / terms) ─── */
+
+.prose-wise h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--wise-text1);
+  margin-bottom: 0.5rem;
+}
+
+.prose-wise h2 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--wise-text1);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-wise h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--wise-text1);
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-wise p {
+  color: var(--wise-text2);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.prose-wise ul {
+  color: var(--wise-text2);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  padding-left: 1.25rem;
+  list-style: disc;
+  font-size: 0.95rem;
+}
+
+.prose-wise li {
+  margin-bottom: 0.4rem;
+}
+
+.prose-wise a {
+  color: var(--wise-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose-wise a:hover {
+  color: var(--wise-accent-light);
+}
+
+.prose-wise strong {
+  color: var(--wise-text1);
+  font-weight: 600;
 }

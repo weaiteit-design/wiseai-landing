@@ -49,11 +49,14 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="mx-auto max-w-xl pb-20 sm:pb-28">
+    <section id="faq" className="mx-auto max-w-xl scroll-mt-20 pb-20 sm:pb-28">
       {/* Section Title */}
-      <p className="mb-8 text-center text-xs font-semibold uppercase tracking-[0.8px] text-[var(--wise-accent-light)]">
-        Frequently Asked Questions
+      <p className="mb-3 text-center text-xs font-semibold uppercase tracking-[0.8px] text-[var(--wise-accent-light)]">
+        FAQ
       </p>
+      <h2 className="mb-8 text-center text-[26px] font-extrabold leading-tight tracking-tight text-[var(--wise-text1)] sm:text-[32px]">
+        Frequently Asked Questions
+      </h2>
 
       {/* FAQ Items */}
       <div className="rounded-2xl border border-[var(--wise-glass-border-light)] bg-[var(--wise-surface1)] px-6">

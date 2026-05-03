@@ -1,6 +1,6 @@
 interface GlowOrbProps {
   position: "top-right" | "bottom-left" | "center";
-  color: "indigo" | "purple" | "cyan";
+  color: "orange" | "turquoise" | "amber";
 }
 
 const positionClasses = {
@@ -10,9 +10,9 @@ const positionClasses = {
 };
 
 const colorClasses = {
-  indigo: "bg-[rgba(99,102,241,0.15)]",
-  purple: "bg-[rgba(124,58,237,0.12)]",
-  cyan: "bg-[rgba(6,182,212,0.1)]",
+  orange: "bg-[rgba(249,115,22,0.18)]",
+  turquoise: "bg-[rgba(13,148,136,0.15)]",
+  amber: "bg-[rgba(251,146,60,0.14)]",
 };
 
 export default function GlowOrb({ position, color }: GlowOrbProps) {

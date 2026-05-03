@@ -4,9 +4,10 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const SCREENS = [
-  { src: "/app-home.png", alt: "WiseAI Home — streaks, daily AI hacks, and bite-sized lessons" },
-  { src: "/app-updates.png", alt: "WiseAI Updates — curated AI news and must-read stories" },
-  { src: "/app-tools.png", alt: "WiseAI Tools — discover and compare 53+ AI tools" },
+  { src: "/app-home.png", alt: "WiseAI Home — daily missions, streaks, and Wurtle the mascot" },
+  { src: "/app-updates.png", alt: "WiseAI Updates — 25 personalized AI updates daily, curated for you" },
+  { src: "/app-tools.png", alt: "WiseAI Tools — discover and compare 53+ AI tools, with daily launches" },
+  { src: "/app-learn.png", alt: "WiseAI Learn — interactive micro-lessons with quizzes and challenges" },
 ];
 
 export default function PhoneMockup() {

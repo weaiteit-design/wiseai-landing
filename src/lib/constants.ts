@@ -1,31 +1,45 @@
 export const FEATURES = [
   {
-    icon: "Newspaper" as const,
-    title: "AI News, Simplified",
+    icon: "Newspaper",
+    title: "Personalized AI News",
     description:
-      "Curated updates from 30+ sources, distilled into bite-sized cards you can read in under a minute.",
+      "25 hand-picked updates daily from 30+ sources, filtered by your role and interests. Today's AI Briefing in 60 seconds.",
     gradient: "from-orange-500 to-amber-500",
   },
   {
-    icon: "BookOpen" as const,
-    title: "Learn AI in 5 Minutes a Day",
+    icon: "BookOpen",
+    title: "Bite-sized Lessons",
     description:
-      "Interactive micro-lessons that build real understanding. Quizzes, flashcards, and hands-on prompt challenges.",
+      "5-15 minute interactive lessons with quizzes, flashcards, and prompt challenges. A roadmap that adapts to your level.",
     gradient: "from-teal-500 to-cyan-500",
   },
   {
-    icon: "Wrench" as const,
-    title: "Find the Right AI Tool",
+    icon: "Wrench",
+    title: "53+ AI Tools, Compared",
     description:
-      "Compare 53+ AI tools side-by-side. See which one fits your workflow, with real examples and honest ratings.",
+      "Find the right tool for any task. Daily launches, side-by-side comparisons, and honest ratings — not paid placements.",
     gradient: "from-orange-500 to-rose-500",
   },
   {
-    icon: "Trophy" as const,
-    title: "Stay Motivated, Level Up",
+    icon: "Sparkles",
+    title: "Daily Missions",
     description:
-      "Earn XP, maintain streaks, unlock badges, and climb leaderboards. Learning AI has never been this fun.",
+      "Four quick missions every day — read, learn, explore, warm up. Stack streaks, earn XP, and never lose momentum.",
     gradient: "from-amber-500 to-orange-600",
+  },
+  {
+    icon: "MessageSquare",
+    title: "Personal AI Tutor",
+    description:
+      "Ask anything in chat. Powered by Gemini with grounded answers from your reading history and the latest AI news.",
+    gradient: "from-cyan-500 to-teal-600",
+  },
+  {
+    icon: "Trophy",
+    title: "Compete & Level Up",
+    description:
+      "Climb leaderboards, unlock badges, and join challenges. Friendly competition that keeps the dopamine hits coming.",
+    gradient: "from-orange-600 to-amber-600",
   },
 ];
 
@@ -33,22 +47,22 @@ export const FAQS = [
   {
     question: "What exactly is WiseAI?",
     answer:
-      "WiseAI is a mobile app that helps you learn AI through personalized news, interactive micro-lessons, an AI tool directory, and gamification. Think Duolingo, but for understanding and using AI.",
+      "WiseAI is a mobile app that helps you learn AI and stay current — through 25 personalized news picks daily, interactive micro-lessons, an AI tool directory with 53+ tools, daily missions, and an AI chat tutor. Think Duolingo, but for understanding and using AI.",
   },
   {
     question: "Who is this for?",
     answer:
-      "Anyone who wants to stay informed about AI without the overwhelm — students, professionals in non-technical roles, developers, founders, creators. WiseAI adapts to your level, role, and goals.",
+      "Anyone who wants to stay informed about AI without the overwhelm — students, professionals in non-technical roles, developers, founders, creators. WiseAI adapts to your level, role, and goals during onboarding.",
   },
   {
     question: "How much time do I need each day?",
     answer:
-      "Just 15 minutes a day. The app is designed around micro-content: a quick news scan, one bite-sized lesson, and a short prompt challenge. You can do more if you want — or just keep your streak alive.",
+      "Just 15 minutes. The app is built around four daily missions: read an update, complete a lesson, explore a tool, and finish a warmup. Do all four to claim a +60 XP bonus, or do one and keep your streak alive.",
   },
   {
     question: "Is it free?",
     answer:
-      "Yes — the core experience (daily updates, basic lessons, tool directory) is free forever. WiseAI Pro unlocks unlimited deep-reads, advanced lessons, spaced repetition, and AI chat.",
+      "Yes — the core experience (daily updates, basic lessons, tool directory, daily missions, streaks) is free forever. WiseAI Pro unlocks unlimited deep-reads, advanced lessons, spaced repetition, and the AI chat tutor.",
   },
   {
     question: "Where can I get the app?",
@@ -58,6 +72,6 @@ export const FAQS = [
   {
     question: "How is my data handled?",
     answer:
-      "We collect only what's needed to give you a personalized experience: email, profile info, and your in-app progress. We never sell your data. See our Privacy Policy for full details.",
+      "We collect only what's needed to personalize your experience: email, profile info, and your in-app progress. We never sell your data and we don't train AI models on your conversations. See our Privacy Policy for full details.",
   },
 ];

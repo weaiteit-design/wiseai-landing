@@ -7,18 +7,13 @@ export default function Footer() {
       <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-start sm:justify-between">
         {/* Brand */}
         <div className="flex flex-col items-center sm:items-start">
-          <div className="flex items-center gap-2.5">
-            <Image
-              src="/wiseai-icon.png"
-              alt="WiseAI logo"
-              width={28}
-              height={28}
-              className="h-7 w-7 rounded-md"
-            />
-            <span className="text-base font-extrabold tracking-tight text-[var(--wise-text1)]">
-              Wise<span className="text-[var(--wise-accent)]">AI</span>
-            </span>
-          </div>
+          <Image
+            src="/wiseai-logo.png"
+            alt="WiseAI"
+            width={500}
+            height={500}
+            className="h-12 w-auto"
+          />
           <p className="mt-2 text-xs text-[var(--wise-text3)]">
             Your Intelligence, Amplified.
           </p>

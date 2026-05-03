@@ -10,18 +10,15 @@ export default function Hero() {
         {/* Left: Content */}
         <div className="flex flex-1 flex-col items-center text-center lg:items-start lg:text-left">
           {/* Logo */}
-          <div className="mb-6 flex animate-fade-in items-center gap-3">
+          <div className="mb-6 animate-fade-in">
             <Image
-              src="/wiseai-icon.png"
-              alt="WiseAI logo"
-              width={64}
-              height={64}
-              className="h-14 w-14 rounded-2xl shadow-[0_0_24px_rgba(249,115,22,0.25)]"
+              src="/wiseai-logo.png"
+              alt="WiseAI"
+              width={500}
+              height={500}
+              className="h-28 w-auto drop-shadow-[0_0_24px_rgba(249,115,22,0.25)] sm:h-32"
               priority
             />
-            <span className="text-3xl font-extrabold tracking-tight text-[var(--wise-text1)] sm:text-4xl">
-              Wise<span className="text-[var(--wise-accent)]">AI</span>
-            </span>
           </div>
 
           {/* Live Badge */}

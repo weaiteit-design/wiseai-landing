@@ -63,9 +63,9 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico" },
-      { url: "/wiseai-icon.png", type: "image/png" },
+      { url: "/wiseai-logo.png", type: "image/png" },
     ],
-    apple: "/wiseai-icon.png",
+    apple: "/wiseai-logo.png",
   },
 };
 

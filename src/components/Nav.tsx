@@ -32,18 +32,15 @@ export default function Nav() {
       }`}
     >
       <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-4 sm:px-8">
-        <Link href="/" className="flex items-center gap-2.5">
+        <Link href="/" className="flex items-center" aria-label="WiseAI home">
           <Image
-            src="/wiseai-icon.png"
-            alt="WiseAI logo"
-            width={32}
-            height={32}
-            className="h-8 w-8 rounded-lg"
+            src="/wiseai-logo.png"
+            alt="WiseAI"
+            width={500}
+            height={500}
+            className="h-10 w-auto"
             priority
           />
-          <span className="text-lg font-extrabold tracking-tight text-[var(--wise-text1)]">
-            Wise<span className="text-[var(--wise-accent)]">AI</span>
-          </span>
         </Link>
 
         {/* Desktop links */}

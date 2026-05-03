@@ -3,6 +3,8 @@ import {
   BookOpen,
   Wrench,
   Trophy,
+  Sparkles,
+  MessageSquare,
   type LucideIcon,
 } from "lucide-react";
 
@@ -11,6 +13,8 @@ const iconMap: Record<string, LucideIcon> = {
   BookOpen,
   Wrench,
   Trophy,
+  Sparkles,
+  MessageSquare,
 };
 
 interface FeatureCardProps {

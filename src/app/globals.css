@@ -13,24 +13,22 @@
   --wise-accent: #F97316;
   --wise-accent-light: #FB923C;
   --wise-accent-dim: rgba(249, 115, 22, 0.12);
-  --wise-accent-glow: rgba(249, 115, 22, 0.25);
 
-  /* Secondary — deep turquoise (gradients, highlights) */
+  /* Secondary — deep turquoise (used sparingly: links, small highlights) */
   --wise-secondary: #0D9488;
   --wise-secondary-light: #14B8A6;
   --wise-secondary-dim: rgba(13, 148, 136, 0.12);
-  --wise-secondary-glow: rgba(13, 148, 136, 0.25);
 
   /* Text — crisp hierarchy */
-  --wise-text1: #F0F0F5;
+  --wise-text1: #F5F5F7;
   --wise-text2: #9CA3AF;
   --wise-text3: #6B7280;
   --wise-text4: #4B5563;
 
-  /* Borders */
-  --wise-glass-border: rgba(255, 255, 255, 0.15);
-  --wise-glass-border-light: rgba(255, 255, 255, 0.08);
-  --wise-divider: rgba(255, 255, 255, 0.06);
+  /* Borders — hairlines, not glass */
+  --wise-border: rgba(255, 255, 255, 0.12);
+  --wise-border-strong: rgba(255, 255, 255, 0.22);
+  --wise-divider: rgba(255, 255, 255, 0.08);
 
   /* Status */
   --wise-success: #10B981;
@@ -46,15 +44,14 @@
   --color-wise-accent: var(--wise-accent);
   --color-wise-accent-light: var(--wise-accent-light);
   --color-wise-accent-dim: var(--wise-accent-dim);
-  --color-wise-accent-glow: var(--wise-accent-glow);
   --color-wise-secondary: var(--wise-secondary);
   --color-wise-secondary-light: var(--wise-secondary-light);
   --color-wise-text1: var(--wise-text1);
   --color-wise-text2: var(--wise-text2);
   --color-wise-text3: var(--wise-text3);
   --color-wise-text4: var(--wise-text4);
-  --color-wise-glass-border: var(--wise-glass-border);
-  --color-wise-glass-border-light: var(--wise-glass-border-light);
+  --color-wise-border: var(--wise-border);
+  --color-wise-border-strong: var(--wise-border-strong);
   --color-wise-divider: var(--wise-divider);
   --color-wise-success: var(--wise-success);
   --color-wise-warning: var(--wise-warning);
@@ -62,18 +59,12 @@
 
   --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
 
-  --animate-glow-pulse: glow-pulse 2.5s ease-in-out infinite;
-  --animate-fade-in: fade-in 0.6s ease-out forwards;
-  --animate-slide-up: slide-up 0.6s ease-out forwards;
-  --animate-float: float 3s ease-in-out infinite;
+  --animate-fade-in: fade-in 0.5s ease-out forwards;
+  --animate-slide-up: slide-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-marquee: marquee 36s linear infinite;
 }
 
 /* ─── Keyframes ─── */
-
-@keyframes glow-pulse {
-  0%, 100% { opacity: 0.2; }
-  50% { opacity: 0.5; }
-}
 
 @keyframes fade-in {
   from { opacity: 0; }
@@ -81,48 +72,73 @@
 }
 
 @keyframes slide-up {
-  from { opacity: 0; transform: translateY(24px); }
+  from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ─── Reduced Motion ─── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-slide-up,
+  .animate-fade-in {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ─── Focus Visibility (keyboard nav) ─── */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--wise-accent-light);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 /* ─── Base Styles ─── */
 
 body {
-  background: var(--wise-bg);
+  /* Subtle vertical depth — not a decorative blob, just a quiet tonal shift */
+  background: linear-gradient(180deg, #0d1f33 0%, var(--wise-bg) 420px, var(--wise-bg) 100%);
   color: var(--wise-text1);
   font-family: var(--font-inter), "Inter", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ─── Glass Card Utility ─── */
-
-.glass-card {
-  background: rgba(15, 35, 55, 0.7);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid var(--wise-glass-border-light);
-  border-radius: 16px;
-  transition: border-color 0.3s, box-shadow 0.3s;
+.heading-font {
+  font-family: "Instrument Serif", var(--font-sans);
+  font-style: italic;
+  font-weight: 400;
 }
 
-.glass-card:hover {
-  border-color: rgba(249, 115, 22, 0.3);
-  box-shadow: 0 0 24px rgba(249, 115, 22, 0.12);
+/* ─── Flat Surface Card (hairline border, no blur/glow) ─── */
+
+.wise-card {
+  background: var(--wise-surface1);
+  border: 1px solid var(--wise-border);
+  border-radius: 10px;
 }
 
-/* ─── Gradient Text Utility (orange → turquoise) ─── */
+/* ─── Accent word highlight (matches in-app + screenshot pattern: solid color, not gradient) ─── */
 
-.gradient-text {
-  background: linear-gradient(135deg, var(--wise-accent) 0%, var(--wise-secondary-light) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.accent {
+  color: var(--wise-accent);
 }
 
 /* ─── Selection ─── */
@@ -151,11 +167,20 @@ body {
   background: var(--wise-text4);
 }
 
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* ─── Prose for legal pages (privacy / terms) ─── */
 
 .prose-wise h1 {
   font-size: 2.25rem;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--wise-text1);
   margin-bottom: 0.5rem;
 }
@@ -209,4 +234,50 @@ body {
 .prose-wise strong {
   color: var(--wise-text1);
   font-weight: 600;
+}
+
+/* ─── Marquee (source strip) ─── */
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: var(--animate-marquee);
+}
+
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+}
+
+/* ─── Coming Soon store badge ─── */
+
+.store-badge {
+  position: relative;
+  overflow: hidden;
+}
+
+.store-badge .soon-ribbon {
+  position: absolute;
+  top: 6px;
+  right: -26px;
+  transform: rotate(38deg);
+  background: var(--wise-accent);
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 28px;
 }

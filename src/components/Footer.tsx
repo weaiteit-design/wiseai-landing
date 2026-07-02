@@ -12,7 +12,7 @@ export default function Footer() {
             alt="WiseAI"
             width={500}
             height={500}
-            className="h-16 w-auto"
+            className="h-9 w-auto"
           />
           <p className="mt-2 text-xs text-[var(--wise-text3)]">
             Your Intelligence, Amplified.
@@ -34,10 +34,10 @@ export default function Footer() {
             FAQ
           </Link>
           <Link
-            href="/#download"
+            href="/#pricing"
             className="text-sm text-[var(--wise-text2)] transition-colors hover:text-[var(--wise-text1)]"
           >
-            Download
+            Pricing
           </Link>
           <Link
             href="/privacy"

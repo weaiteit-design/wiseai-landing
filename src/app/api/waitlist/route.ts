@@ -95,7 +95,7 @@ export async function POST(request: NextRequest) {
 
       return NextResponse.json(
         {
-                  message: "You're in! We'll notify you when TheWiseAI launches.",
+                  message: "You're in! We'll email you the moment WiseAI launches.",
         },
         { status: 201 }
             );

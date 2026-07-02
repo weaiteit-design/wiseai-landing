@@ -1,60 +1,30 @@
-import {
-  Newspaper,
-  BookOpen,
-  Wrench,
-  Trophy,
-  Sparkles,
-  MessageSquare,
-  type LucideIcon,
-} from "lucide-react";
-
-const iconMap: Record<string, LucideIcon> = {
-  Newspaper,
-  BookOpen,
-  Wrench,
-  Trophy,
-  Sparkles,
-  MessageSquare,
-};
+import Reveal from "./Reveal";
 
 interface FeatureCardProps {
-  icon: string;
   title: string;
   description: string;
-  gradient: string;
   index: number;
 }
 
-export default function FeatureCard({
-  icon,
-  title,
-  description,
-  gradient,
-  index,
-}: FeatureCardProps) {
-  const Icon = iconMap[icon] || Newspaper;
-
+export default function FeatureCard({ title, description, index }: FeatureCardProps) {
   return (
-    <div
-      className="glass-card p-6 transition-all duration-300 hover:-translate-y-1 animate-slide-up"
-      style={{ animationDelay: `${0.6 + index * 0.1}s` }}
+    <Reveal
+      className="border-t border-[var(--wise-divider)] py-7 pr-6"
+      delay={(index % 3) * 60}
     >
-      {/* Icon */}
-      <div
-        className={`mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${gradient}`}
+      <span
+        className={`text-sm font-medium tracking-wide ${
+          index % 2 === 0 ? "text-[var(--wise-accent)]" : "text-[var(--wise-secondary-light)]"
+        }`}
       >
-        <Icon className="h-5 w-5 text-white" />
-      </div>
-
-      {/* Title */}
-      <h3 className="mb-2 text-[15px] font-semibold text-[var(--wise-text1)]">
+        {String(index + 1).padStart(2, "0")}
+      </span>
+      <h3 className="heading-font mt-2 mb-2 text-2xl text-[var(--wise-text1)]">
         {title}
       </h3>
-
-      {/* Description */}
       <p className="text-sm leading-relaxed text-[var(--wise-text2)]">
         {description}
       </p>
-    </div>
+    </Reveal>
   );
 }

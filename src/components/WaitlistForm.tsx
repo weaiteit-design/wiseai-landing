@@ -5,7 +5,11 @@ import { CheckCircle, Loader2, ArrowRight } from "lucide-react";
 
 type Status = "idle" | "loading" | "success" | "error" | "already";
 
-export default function WaitlistForm() {
+interface WaitlistFormProps {
+  size?: "default" | "large";
+}
+
+export default function WaitlistForm({ size = "default" }: WaitlistFormProps) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [message, setMessage] = useState("");
@@ -58,9 +62,13 @@ export default function WaitlistForm() {
     }
   };
 
+  const inputHeight = size === "large" ? "h-14" : "h-12";
+  const buttonHeight = size === "large" ? "h-14 px-7 text-[15px]" : "h-12 px-6 text-sm";
+  const textSize = size === "large" ? "text-base" : "text-sm";
+
   if (status === "success" || status === "already") {
     return (
-      <div className="flex items-center gap-3 rounded-2xl border border-[rgba(16,185,129,0.25)] bg-[rgba(16,185,129,0.08)] px-6 py-4 animate-fade-in">
+      <div className="flex items-center gap-3 border border-[rgba(16,185,129,0.3)] bg-[rgba(16,185,129,0.06)] px-6 py-4 animate-fade-in">
         <CheckCircle className="h-5 w-5 shrink-0 text-[var(--wise-success)]" />
         <p className="text-sm text-[var(--wise-text1)]">{message}</p>
       </div>
@@ -78,21 +86,21 @@ export default function WaitlistForm() {
             if (status === "error") setStatus("idle");
           }}
           placeholder="Enter your email address"
-          className="h-12 flex-1 rounded-xl border border-[var(--wise-glass-border)] bg-[var(--wise-surface2)] px-4 text-sm text-[var(--wise-text1)] placeholder:text-[var(--wise-text3)] outline-none transition-all duration-200 focus:border-[var(--wise-accent)] focus:ring-2 focus:ring-[rgba(99,102,241,0.25)]"
+          className={`${inputHeight} flex-1 border border-[var(--wise-border)] bg-[var(--wise-surface2)] px-4 ${textSize} text-[var(--wise-text1)] placeholder:text-[var(--wise-text3)] outline-none transition-colors duration-150 focus:border-[var(--wise-accent)]`}
           disabled={status === "loading"}
           autoComplete="email"
         />
         <button
           type="submit"
           disabled={status === "loading"}
-          className="group flex h-12 items-center justify-center gap-2 rounded-xl bg-[var(--wise-accent)] px-6 text-sm font-semibold text-white shadow-[0_0_20px_rgba(99,102,241,0.25)] transition-all duration-200 hover:shadow-[0_0_30px_rgba(99,102,241,0.4)] hover:scale-[1.02] active:scale-[0.97] disabled:opacity-60 disabled:cursor-not-allowed sm:w-auto"
+          className={`group flex ${buttonHeight} items-center justify-center gap-2 bg-[var(--wise-accent)] font-semibold text-white transition-colors duration-150 hover:bg-[var(--wise-accent-light)] active:translate-y-px disabled:opacity-60 disabled:cursor-not-allowed sm:w-auto`}
         >
           {status === "loading" ? (
             <Loader2 className="h-4 w-4 animate-spin" />
           ) : (
             <>
               Join the Waitlist
-              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+              <ArrowRight className="h-4 w-4 transition-transform duration-150 group-hover:translate-x-0.5" />
             </>
           )}
         </button>

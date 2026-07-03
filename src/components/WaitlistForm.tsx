@@ -76,8 +76,8 @@ export default function WaitlistForm({ size = "default" }: WaitlistFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-md">
-      <div className="flex flex-col gap-3 sm:flex-row">
+    <form onSubmit={handleSubmit} className="w-full max-w-2xl">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
         <input
           type="email"
           value={email}

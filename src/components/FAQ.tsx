@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { FAQS } from "@/lib/constants";
+import Reveal from "./Reveal";
 
 function FAQItem({
   question,
@@ -16,12 +17,12 @@ function FAQItem({
   onToggle: () => void;
 }) {
   return (
-    <div className="border-b border-[var(--wise-divider)]">
+    <div className="border-t border-[var(--wise-divider)]">
       <button
         onClick={onToggle}
         className="flex w-full items-center justify-between py-5 text-left transition-colors"
       >
-        <span className="text-[15px] font-semibold text-[var(--wise-text1)] pr-4">
+        <span className="text-[15px] font-medium text-[var(--wise-text1)] pr-4">
           {question}
         </span>
         <ChevronDown
@@ -49,14 +50,17 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="mx-auto max-w-xl pb-20 sm:pb-28">
-      {/* Section Title */}
-      <p className="mb-8 text-center text-xs font-semibold uppercase tracking-[0.8px] text-[var(--wise-accent-light)]">
-        Frequently Asked Questions
-      </p>
+    <section id="faq" className="scroll-mt-20 pb-20 sm:pb-28">
+      <Reveal className="mb-8 max-w-xl">
+        <p className="mb-3 text-xs font-medium uppercase tracking-[0.1em] text-[var(--wise-text3)]">
+          FAQ
+        </p>
+        <h2 className="heading-font text-[34px] leading-[1.05] text-[var(--wise-text1)] sm:text-[44px]">
+          Frequently asked questions
+        </h2>
+      </Reveal>
 
-      {/* FAQ Items */}
-      <div className="rounded-2xl border border-[var(--wise-glass-border-light)] bg-[var(--wise-surface1)] px-6">
+      <Reveal delay={100} className="max-w-2xl border-b border-[var(--wise-divider)]">
         {FAQS.map((faq, i) => (
           <FAQItem
             key={i}
@@ -66,7 +70,7 @@ export default function FAQ() {
             onToggle={() => setOpenIndex(openIndex === i ? null : i)}
           />
         ))}
-      </div>
+      </Reveal>
     </section>
   );
 }

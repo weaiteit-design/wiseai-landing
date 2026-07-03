@@ -1,83 +1,100 @@
-import Image from "next/image";
 import WaitlistForm from "./WaitlistForm";
 import PhoneMockup from "./PhoneMockup";
+import DownloadButtons from "./DownloadButtons";
+import CountUp from "./CountUp";
+import { STATS } from "@/lib/constants";
 
 export default function Hero() {
   return (
-    <section className="pb-20 sm:pb-28">
-      <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-16">
+    <section className="pt-8 pb-16 sm:pt-12 sm:pb-20">
+      <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:gap-8">
         {/* Left: Content */}
-        <div className="flex flex-1 flex-col items-center text-center lg:items-start lg:text-left">
-          {/* Logo: icon + text separated */}
-          <div className="mb-6 animate-fade-in flex flex-col items-center lg:items-start">
-            <Image
-              src="/logo-icon.png"
-              alt="TheWiseAI logo"
-              width={713}
-              height={470}
-              className="w-52 sm:w-64 lg:-ml-[72px]"
-              priority
-            />
-            <span className="mt-2 text-4xl font-extrabold tracking-tight text-[var(--wise-text1)] sm:text-5xl">
-              The<span className="text-[var(--wise-text1)]">Wise</span>
-              <span className="text-[var(--wise-accent)]">AI</span>
+        <div className="flex flex-col items-start text-left">
+          {/* Status Badge — plain hairline, no glow */}
+          <div className="mb-6 inline-flex animate-fade-in items-center gap-2 border border-[var(--wise-border)] px-3 py-1">
+            <span className="h-1.5 w-1.5 rounded-full bg-[var(--wise-accent)]" />
+            <span className="text-[11px] font-medium uppercase tracking-[0.1em] text-[var(--wise-text2)]">
+              Launching soon — in final App Store review
             </span>
           </div>
 
-          {/* Coming Soon Badge */}
-          <div
-            className="mb-5 inline-flex items-center gap-2 rounded-full border border-[var(--wise-accent-dim)] bg-[rgba(99,102,241,0.06)] px-4 py-1.5 animate-fade-in"
-            style={{ animationDelay: "0.1s" }}
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-[var(--wise-accent)] animate-glow-pulse" />
-            <span className="text-xs font-semibold uppercase tracking-[0.8px] text-[var(--wise-accent-light)]">
-              Coming Soon
-            </span>
-          </div>
-
-          {/* Headline */}
+          {/* Headline — italic display serif, the editorial signature of premium AI product sites */}
           <h1
-            className="mb-4 text-[28px] font-extrabold leading-tight tracking-tight sm:text-[36px] lg:text-[42px] animate-slide-up"
-            style={{ animationDelay: "0.2s" }}
+            className="heading-font mb-6 animate-slide-up text-[54px] leading-[1.02] tracking-[-0.01em] text-[var(--wise-text1)] sm:text-[76px] lg:text-[88px]"
+            style={{ animationDelay: "0.05s" }}
           >
-            <span className="gradient-text">Master AI</span>
+            Master <span className="accent">AI</span>
             <br />
-            <span className="text-[var(--wise-text1)]">Before It Masters You</span>
+            before it masters you.
           </h1>
 
           {/* Description */}
           <p
-            className="mb-8 max-w-md text-base leading-relaxed text-[var(--wise-text2)] sm:text-lg animate-slide-up"
-            style={{ animationDelay: "0.3s" }}
+            className="mb-8 max-w-md animate-slide-up text-base leading-relaxed text-[var(--wise-text2)] sm:text-lg"
+            style={{ animationDelay: "0.1s" }}
           >
-            The all-in-one app that turns AI overwhelm into AI fluency.
-            Personalized news, bite-sized lessons, 53+ tool comparisons, and a
-            gamified experience that keeps you coming back.
+            Daily AI news, bite-sized lessons, 50+ tool comparisons, and AI
+            duels — one app, 15 minutes a day.
           </p>
 
-          {/* Waitlist Form */}
+          {/* Primary CTA: Waitlist */}
           <div
-            className="w-full animate-slide-up"
-            style={{ animationDelay: "0.4s" }}
+            id="waitlist"
+            className="w-full animate-slide-up scroll-mt-20"
+            style={{ animationDelay: "0.15s" }}
           >
-            <WaitlistForm />
+            <WaitlistForm size="large" />
+            <p className="mt-3 text-xs text-[var(--wise-text3)]">
+              Be first to know the moment we launch. No spam, unsubscribe
+              anytime.
+            </p>
           </div>
 
-          {/* Tagline */}
-          <p
-            className="mt-3 text-xs text-[var(--wise-text3)] animate-slide-up"
-            style={{ animationDelay: "0.5s" }}
+          {/* Secondary: store badges (coming soon) */}
+          <div
+            id="download"
+            className="mt-8 w-full animate-slide-up scroll-mt-20"
+            style={{ animationDelay: "0.2s" }}
           >
-            Your Intelligence, Amplified.
-          </p>
+            <DownloadButtons />
+          </div>
+
+          {/* Stats — plain inline row, hairline dividers, no boxes */}
+          <div
+            className="mt-12 flex w-full max-w-md animate-slide-up divide-x divide-[var(--wise-divider)] border-t border-[var(--wise-divider)] pt-6"
+            style={{ animationDelay: "0.25s" }}
+          >
+            {STATS.map((stat, i) => (
+              <div key={stat.label} className="flex-1 px-3 first:pl-0">
+                <CountUp
+                  value={stat.value}
+                  className={`text-xl font-semibold tracking-tight sm:text-2xl ${
+                    i % 2 === 0 ? "text-[var(--wise-accent-light)]" : "text-[var(--wise-secondary-light)]"
+                  }`}
+                />
+                <p className="mt-0.5 text-[11px] leading-tight text-[var(--wise-text3)] sm:text-xs">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Right: Phone Mockup */}
+        {/* Right: Phone Mockup — real product, minimal frame */}
         <div
-          className="flex shrink-0 justify-center animate-slide-up lg:justify-end"
-          style={{ animationDelay: "0.4s" }}
+          className="relative flex animate-slide-up justify-center lg:justify-end"
+          style={{ animationDelay: "0.15s" }}
         >
           <PhoneMockup />
+
+          {/* Wurtle, waving hello from beside the phone */}
+          <img
+            src="/mascot/wurtle-wave.webp"
+            alt="Wurtle the mascot waving hello"
+            width={512}
+            height={512}
+            className="absolute -bottom-3 -left-4 h-20 w-20 sm:h-24 sm:w-24"
+          />
         </div>
       </div>
     </section>

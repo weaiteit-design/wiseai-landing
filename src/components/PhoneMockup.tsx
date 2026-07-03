@@ -4,9 +4,10 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const SCREENS = [
-  { src: "/app-home.png", alt: "TheWiseAI Home — streaks, daily AI hacks, and bite-sized lessons" },
-  { src: "/app-updates.png", alt: "TheWiseAI Updates — curated AI news and must-read stories" },
-  { src: "/app-tools.png", alt: "TheWiseAI Tools — discover and compare 53+ AI tools" },
+  { src: "/app-home.png", alt: "WiseAI Home — daily missions, streaks, and Wurtle the mascot" },
+  { src: "/app-updates.png", alt: "WiseAI Updates — 25 personalized AI updates daily, curated for you" },
+  { src: "/app-tools.png", alt: "WiseAI Tools — discover and compare 50+ AI tools, with daily launches" },
+  { src: "/app-learn.png", alt: "WiseAI Learn — interactive micro-lessons with quizzes and challenges" },
 ];
 
 export default function PhoneMockup() {
@@ -19,14 +20,14 @@ export default function PhoneMockup() {
   }, []);
 
   return (
-    <div className="relative animate-float">
-      {/* Phone Frame */}
-      <div className="relative mx-auto w-[280px] rounded-[40px] border-2 border-[rgba(255,255,255,0.1)] bg-[var(--wise-surface1)] p-2 shadow-[0_0_60px_rgba(99,102,241,0.15)]">
+    <div className="relative">
+      {/* Phone Frame — realistic, no glow halo */}
+      <div className="relative mx-auto w-[300px] rounded-[36px] border border-[var(--wise-border-strong)] bg-[#050d17] p-2 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.6)]">
         {/* Dynamic Island / Notch */}
-        <div className="absolute top-0 left-1/2 z-20 h-6 w-28 -translate-x-1/2 rounded-b-2xl bg-[var(--wise-surface1)]" />
+        <div className="absolute top-0 left-1/2 z-20 h-6 w-28 -translate-x-1/2 rounded-b-2xl bg-[#050d17]" />
 
         {/* Screen */}
-        <div className="relative aspect-[375/812] overflow-hidden rounded-[32px] bg-[var(--wise-bg)]">
+        <div className="relative aspect-[375/812] overflow-hidden rounded-[28px] bg-[var(--wise-bg)]">
           {SCREENS.map((screen, i) => (
             <div
               key={screen.src}
@@ -61,12 +62,6 @@ export default function PhoneMockup() {
           />
         ))}
       </div>
-
-      {/* Glow behind phone */}
-      <div
-        className="absolute inset-0 -z-10 scale-125 rounded-full bg-[rgba(99,102,241,0.08)] blur-[80px]"
-        aria-hidden="true"
-      />
     </div>
   );
 }

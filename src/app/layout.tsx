@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "WiseAI" }],
   creator: "WiseAI",
-  metadataBase: new URL("https://wiseai.app"),
+  metadataBase: new URL("https://www.thewiseai.app"),
   alternates: {
     canonical: "/",
   },
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: "WiseAI — Master AI Before It Masters You",
     description:
       "Personalized AI news, 500+ micro-lessons, 50+ tool comparisons, AI duels, and gamified learning. Launching soon — join the waitlist.",
-    url: "https://wiseai.app",
+    url: "https://www.thewiseai.app",
     siteName: "WiseAI",
     locale: "en_US",
     type: "website",

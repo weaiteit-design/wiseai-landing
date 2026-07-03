@@ -58,7 +58,7 @@ export default function Footer() {
             Terms
           </Link>
           <a
-            href="mailto:hello@wiseai.app"
+            href="mailto:hello@thewiseai.app"
             className="text-sm text-[var(--wise-text2)] transition-colors hover:text-[var(--wise-text1)]"
           >
             Contact

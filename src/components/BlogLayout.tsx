@@ -23,17 +23,17 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
         publisher: {
           "@type": "Organization",
           name: "WiseAI",
-          logo: { "@type": "ImageObject", url: "https://wiseai.app/wiseai-logo.png" },
+          logo: { "@type": "ImageObject", url: "https://www.thewiseai.app/wiseai-logo.png" },
         },
-        image: `https://wiseai.app/blog/${post.slug}/opengraph-image`,
-        mainEntityOfPage: `https://wiseai.app/blog/${post.slug}`,
+        image: `https://www.thewiseai.app/blog/${post.slug}/opengraph-image`,
+        mainEntityOfPage: `https://www.thewiseai.app/blog/${post.slug}`,
       },
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "https://wiseai.app" },
-          { "@type": "ListItem", position: 2, name: "Blog", item: "https://wiseai.app/blog" },
-          { "@type": "ListItem", position: 3, name: post.title, item: `https://wiseai.app/blog/${post.slug}` },
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://www.thewiseai.app" },
+          { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.thewiseai.app/blog" },
+          { "@type": "ListItem", position: 3, name: post.title, item: `https://www.thewiseai.app/blog/${post.slug}` },
         ],
       },
     ],

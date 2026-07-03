@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { BLOG_POSTS } from "@/lib/blog-posts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://wiseai.app";
+  const base = "https://www.thewiseai.app";
   const now = new Date();
 
   return [

@@ -23,7 +23,7 @@ export async function generateMetadata({
     openGraph: {
       title: post.title,
       description: post.description,
-      url: `https://wiseai.app/blog/${post.slug}`,
+      url: `https://www.thewiseai.app/blog/${post.slug}`,
       type: "article",
       publishedTime: post.publishedAt,
     },

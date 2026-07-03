@@ -33,7 +33,7 @@ export default function TermsPage() {
       <p>
         You're responsible for keeping your account credentials secure and for
         all activity that happens under your account. Notify us immediately at{" "}
-        <a href="mailto:hello@wiseai.app">hello@wiseai.app</a> if you suspect
+        <a href="mailto:hello@thewiseai.app">hello@thewiseai.app</a> if you suspect
         unauthorized access.
       </p>
       <p>
@@ -164,11 +164,11 @@ export default function TermsPage() {
       </p>
       <ul>
         <li>
-          Email: <a href="mailto:hello@wiseai.app">hello@wiseai.app</a>
+          Email: <a href="mailto:hello@thewiseai.app">hello@thewiseai.app</a>
         </li>
         <li>
           Privacy questions:{" "}
-          <a href="mailto:privacy@wiseai.app">privacy@wiseai.app</a>
+          <a href="mailto:privacy@thewiseai.app">privacy@thewiseai.app</a>
         </li>
       </ul>
     </LegalLayout>

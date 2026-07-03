@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Blog — WiseAI",
     description:
       "Practical, no-hype writing on AI tools, learning science, and how to actually build AI fluency.",
-    url: "https://wiseai.app/blog",
+    url: "https://www.thewiseai.app/blog",
     type: "website",
   },
 };

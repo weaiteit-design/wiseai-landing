@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/api/",
     },
-    sitemap: "https://wiseai.app/sitemap.xml",
+    sitemap: "https://www.thewiseai.app/sitemap.xml",
   };
 }

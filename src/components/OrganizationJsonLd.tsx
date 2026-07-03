@@ -5,8 +5,8 @@ export default function OrganizationJsonLd() {
       {
         "@type": "Organization",
         name: "WiseAI",
-        url: "https://wiseai.app",
-        logo: "https://wiseai.app/wiseai-logo.png",
+        url: "https://www.thewiseai.app",
+        logo: "https://www.thewiseai.app/wiseai-logo.png",
         sameAs: [],
       },
       {

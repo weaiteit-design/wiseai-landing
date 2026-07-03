@@ -2,22 +2,28 @@ import { ImageResponse } from "next/og";
 import { readFileSync } from "fs";
 import { join } from "path";
 import { getGoogleFont } from "@/lib/og-fonts";
+import { BLOG_POSTS, getBlogPost } from "@/lib/blog-posts";
 
 export const runtime = "nodejs";
-export const alt = "WiseAI — Master AI before it masters you";
+export const alt = "WiseAI Blog";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-const HEADLINE = "Master AI before it masters you.";
-const TAGLINE = "Daily AI news · bite-sized lessons · 50+ tool comparisons · AI duels";
+export async function generateStaticParams() {
+  return BLOG_POSTS.map((post) => ({ slug: post.slug }));
+}
 
-export default async function Image() {
+export default async function Image({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = getBlogPost(slug);
+  const title = post?.title ?? "WiseAI Blog";
+
   const logo = readFileSync(join(process.cwd(), "public", "wiseai-logo.png"));
   const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
 
   const [serifItalic, sans] = await Promise.all([
-    getGoogleFont("Instrument Serif", HEADLINE, ":ital@1"),
-    getGoogleFont("Inter", TAGLINE),
+    getGoogleFont("Instrument Serif", title, ":ital@1"),
+    getGoogleFont("Inter", "WiseAI Blog"),
   ]);
 
   return new ImageResponse(
@@ -30,50 +36,40 @@ export default async function Image() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
+          padding: "0 100px",
           backgroundColor: "#0B1A2B",
           backgroundImage:
             "linear-gradient(180deg, #0d1f33 0%, #0B1A2B 420px, #0B1A2B 100%)",
         }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={logoSrc} width={100} height={100} alt="" />
+        <img src={logoSrc} width={72} height={72} alt="" />
         <div
           style={{
             display: "flex",
-            marginTop: 32,
-            fontSize: 60,
+            marginTop: 20,
+            fontSize: 22,
+            fontFamily: sans ? "Inter" : "sans-serif",
+            color: "#9CA3AF",
+            textTransform: "uppercase",
+            letterSpacing: 3,
+          }}
+        >
+          WiseAI Blog
+        </div>
+        <div
+          style={{
+            display: "flex",
+            marginTop: 28,
+            fontSize: 56,
             fontStyle: "italic",
             color: "#F5F5F7",
             fontFamily: serifItalic ? "Instrument Serif" : "serif",
             textAlign: "center",
-            gap: "0.22em",
+            lineHeight: 1.15,
           }}
         >
-          <span>Master</span>
-          <span style={{ color: "#F97316" }}>AI</span>
-          <span>before</span>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            fontSize: 60,
-            fontStyle: "italic",
-            color: "#F5F5F7",
-            fontFamily: serifItalic ? "Instrument Serif" : "serif",
-          }}
-        >
-          it{" "}masters{" "}you.
-        </div>
-        <div
-          style={{
-            display: "flex",
-            marginTop: 32,
-            fontSize: 26,
-            color: "#9CA3AF",
-            fontFamily: sans ? "Inter" : "sans-serif",
-          }}
-        >
-          {TAGLINE}
+          {title}
         </div>
       </div>
     ),

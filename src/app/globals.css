@@ -247,6 +247,122 @@ body {
   font-weight: 600;
 }
 
+/* ─── Prose for blog posts (editorial serif headings, richer than legal prose) ─── */
+
+.prose-blog h2 {
+  font-family: "Instrument Serif", var(--font-sans);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.75rem;
+  color: var(--wise-text1);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.prose-blog h3 {
+  font-family: "Instrument Serif", var(--font-sans);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.35rem;
+  color: var(--wise-text1);
+  margin-top: 1.75rem;
+  margin-bottom: 0.6rem;
+}
+
+.prose-blog p {
+  color: var(--wise-text2);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+  font-size: 1.0625rem;
+}
+
+.prose-blog ul,
+.prose-blog ol {
+  color: var(--wise-text2);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+  padding-left: 1.4rem;
+  font-size: 1.0625rem;
+}
+
+.prose-blog ul {
+  list-style: disc;
+}
+
+.prose-blog ol {
+  list-style: decimal;
+}
+
+.prose-blog li {
+  margin-bottom: 0.5rem;
+}
+
+.prose-blog li > strong:first-child {
+  color: var(--wise-text1);
+}
+
+.prose-blog a {
+  color: var(--wise-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose-blog a:hover {
+  color: var(--wise-accent-light);
+}
+
+.prose-blog strong {
+  color: var(--wise-text1);
+  font-weight: 600;
+}
+
+.prose-blog blockquote {
+  border-left: 2px solid var(--wise-accent);
+  padding-left: 1.25rem;
+  margin: 1.75rem 0;
+  font-style: italic;
+  color: var(--wise-text1);
+  font-size: 1.1rem;
+}
+
+.prose-blog code {
+  background: var(--wise-surface2);
+  border: 1px solid var(--wise-divider);
+  border-radius: 4px;
+  padding: 0.15rem 0.4rem;
+  font-size: 0.9em;
+  color: var(--wise-accent-light);
+}
+
+.prose-blog hr {
+  border: none;
+  border-top: 1px solid var(--wise-divider);
+  margin: 2.5rem 0;
+}
+
+.prose-blog table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.prose-blog th {
+  text-align: left;
+  color: var(--wise-text1);
+  font-weight: 600;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--wise-border-strong);
+}
+
+.prose-blog td {
+  color: var(--wise-text2);
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--wise-divider);
+  vertical-align: top;
+}
+
 /* ─── Marquee (source strip) ─── */
 
 .marquee-track {

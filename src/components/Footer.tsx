@@ -40,6 +40,12 @@ export default function Footer() {
             Pricing
           </Link>
           <Link
+            href="/blog"
+            className="text-sm text-[var(--wise-text2)] transition-colors hover:text-[var(--wise-text1)]"
+          >
+            Blog
+          </Link>
+          <Link
             href="/privacy"
             className="text-sm text-[var(--wise-text2)] transition-colors hover:text-[var(--wise-text1)]"
           >

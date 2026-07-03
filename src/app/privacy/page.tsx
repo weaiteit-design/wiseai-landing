@@ -138,7 +138,7 @@ export default function PrivacyPage() {
       </ul>
       <p>
         To exercise these rights, email us at{" "}
-        <a href="mailto:privacy@wiseai.app">privacy@wiseai.app</a>. You can also
+        <a href="mailto:privacy@thewiseai.app">privacy@thewiseai.app</a>. You can also
         delete your account directly from the app under{" "}
         <strong>Profile → Settings → Delete Account</strong>.
       </p>
@@ -180,11 +180,11 @@ export default function PrivacyPage() {
       <ul>
         <li>
           Email:{" "}
-          <a href="mailto:privacy@wiseai.app">privacy@wiseai.app</a>
+          <a href="mailto:privacy@thewiseai.app">privacy@thewiseai.app</a>
         </li>
         <li>
           General contact:{" "}
-          <a href="mailto:hello@wiseai.app">hello@wiseai.app</a>
+          <a href="mailto:hello@thewiseai.app">hello@thewiseai.app</a>
         </li>
       </ul>
     </LegalLayout>

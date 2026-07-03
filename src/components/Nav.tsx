@@ -20,6 +20,7 @@ export default function Nav() {
     { href: "/#tour", label: "Tour" },
     { href: "/#features", label: "Features" },
     { href: "/#pricing", label: "Pricing" },
+    { href: "/blog", label: "Blog" },
     { href: "/#faq", label: "FAQ" },
   ];
 

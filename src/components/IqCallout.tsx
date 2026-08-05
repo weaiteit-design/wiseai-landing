@@ -14,6 +14,7 @@ export default function IqCallout() {
         <div className="shadow-soft flex flex-col items-center gap-8 overflow-hidden rounded-[32px] border border-[var(--wise-border)] bg-gradient-to-br from-[#FFF3E4] to-[var(--wise-surface1)] px-8 py-12 text-center sm:px-14 lg:flex-row lg:text-left">
           <Image
             src="/mascot/wurtle-study.png"
+            loading="lazy"
             alt=""
             width={512}
             height={512}

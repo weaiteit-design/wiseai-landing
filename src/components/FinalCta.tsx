@@ -14,6 +14,7 @@ export default function FinalCta() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/mascot/wurtle-celebrate.webp"
+          loading="lazy"
           alt=""
           width={300}
           height={300}

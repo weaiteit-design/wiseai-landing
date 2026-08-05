@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Nav from "./Nav";
 import Footer from "./Footer";
-import WaitlistForm from "./WaitlistForm";
+import { APP_STORE_URL } from "@/lib/constants";
 import type { BlogPost } from "@/lib/blog-posts";
 
 interface BlogLayoutProps {
@@ -91,17 +91,32 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
           {/* Content */}
           <div className="prose-blog">{children}</div>
 
-          {/* Waitlist CTA */}
+          {/* End-of-post CTA. This used to be a waitlist signup promising to
+              email the reader "the moment WiseAI launches", for an app that has
+              been on the App Store since June. */}
           <div className="mt-14 border-t border-[var(--wise-divider)] pt-10">
             <p className="mb-2 text-xs font-medium uppercase tracking-[0.1em] text-[var(--wise-text3)]">
-              Stay in the loop
+              Try it yourself
             </p>
             <h2 className="heading-font mb-4 text-2xl text-[var(--wise-text1)]">
-              Want more like this?
+              How good are you with AI, really?
             </h2>
-            <WaitlistForm />
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/iq"
+                className="btn-press flex min-h-[52px] items-center justify-center rounded-2xl bg-[var(--wise-accent)] px-7 text-[14px] font-semibold uppercase tracking-[0.06em] text-white hover:bg-[var(--wise-accent-light)]"
+              >
+                Take the AI IQ test
+              </Link>
+              <a
+                href={APP_STORE_URL}
+                className="btn-press flex min-h-[52px] items-center justify-center rounded-2xl border border-[var(--wise-border-strong)] px-7 text-[14px] font-semibold uppercase tracking-[0.06em] text-[var(--wise-text1)] hover:border-[var(--wise-accent)] hover:text-[var(--wise-accent-light)]"
+              >
+                Get the app
+              </a>
+            </div>
             <p className="mt-3 text-xs text-[var(--wise-text3)]">
-              Join the waitlist and we&apos;ll email you the moment WiseAI launches.
+              10 questions. 2 minutes. No signup.
             </p>
           </div>
         </article>

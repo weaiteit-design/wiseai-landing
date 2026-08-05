@@ -1,3 +1,8 @@
+// The live App Store listing. WiseAI has been shipping since June 2026, so
+// nothing on this site should say "coming soon" or offer a waitlist.
+export const APP_STORE_URL = "https://apps.apple.com/app/id6761073614";
+export const SUPPORT_EMAIL = "manas@thewiseai.app";
+
 export const STATS = [
   { value: "25", label: "AI updates, daily" },
   { value: "500+", label: "interactive lessons" },
@@ -27,7 +32,7 @@ export const HOW_IT_WORKS = [
     step: "01",
     title: "Get your daily briefing",
     description:
-      "Open the app to 25 AI updates picked just for you from 30+ sources — condensed into a 60-second brief.",
+      "Open the app to 25 AI updates picked just for you from 30+ sources, condensed into a 60-second brief.",
   },
   {
     step: "02",
@@ -58,17 +63,17 @@ export const FEATURES = [
   {
     title: "Bite-sized Lessons & Paths",
     description:
-      "500+ interactive lessons with quizzes, flashcards, and prompt challenges — organized into learning paths that adapt to your level.",
+      "500+ interactive lessons with quizzes, flashcards, and prompt challenges, organized into learning paths that adapt to your level.",
   },
   {
     title: "50+ AI Tools, Compared",
     description:
-      "Find the right tool for any task — daily launches, side-by-side comparisons, honest ratings. Not paid placements.",
+      "Find the right tool for any task, daily launches, side-by-side comparisons, honest ratings. Not paid placements.",
   },
   {
     title: "Your Personal AI Tutor",
     description:
-      "Ask anything, anytime. Powered by Gemini and grounded in your reading history and the latest AI news — not generic answers.",
+      "Ask anything, anytime. Powered by Gemini and grounded in your reading history and the latest AI news, not generic answers.",
   },
   {
     title: "Duels & Leaderboards",
@@ -83,12 +88,12 @@ export const FEATURES = [
   {
     title: "Spaced Repetition",
     description:
-      "A review queue that resurfaces what you're about to forget, right before you forget it — plus certificates for finished paths.",
+      "A review queue that resurfaces what you're about to forget, right before you forget it, plus certificates for finished paths.",
   },
   {
     title: "Daily Missions & Streaks",
     description:
-      "Four quick missions every day — read, learn, explore, warm up. Stack streaks, earn XP, unlock badges, never lose momentum.",
+      "Four quick missions every day, read, learn, explore, warm up. Stack streaks, earn XP, unlock badges, never lose momentum.",
   },
   {
     title: "A Community That Learns Together",
@@ -121,7 +126,7 @@ export const PRICING = {
       "Certificates on completed paths",
       "Priority access to new features",
     ],
-    note: "Pricing varies by region — see current pricing in the app.",
+    note: "Pricing varies by region, see current pricing in the app.",
   },
 };
 
@@ -129,12 +134,12 @@ export const FAQS = [
   {
     question: "What exactly is WiseAI?",
     answer:
-      "WiseAI is a mobile app that helps you learn AI and stay current — through 25 personalized news picks daily, interactive micro-lessons, an AI tool directory with 50+ tools, daily missions, duels, and an AI chat tutor. Think Duolingo, but for understanding and using AI.",
+      "WiseAI is a mobile app that helps you learn AI and stay current, through 25 personalized news picks daily, interactive micro-lessons, an AI tool directory with 50+ tools, daily missions, duels, and an AI chat tutor. Think Duolingo, but for understanding and using AI.",
   },
   {
     question: "Who is this for?",
     answer:
-      "Anyone who wants to stay informed about AI without the overwhelm — students, professionals in non-technical roles, developers, founders, creators. WiseAI adapts to your level, role, and goals during onboarding.",
+      "Anyone who wants to stay informed about AI without the overwhelm, students, professionals in non-technical roles, developers, founders, creators. WiseAI adapts to your level, role, and goals during onboarding.",
   },
   {
     question: "How much time do I need each day?",
@@ -144,17 +149,17 @@ export const FAQS = [
   {
     question: "What are Duels?",
     answer:
-      "Head-to-head prompt battles. Challenge an honest AI Trainer bot (no fake difficulty — it plays it straight) or a friend, get scored, and climb ranks from Bronze to Diamond on the leaderboard.",
+      "Head-to-head prompt battles. Challenge an honest AI Trainer bot (no fake difficulty, it plays it straight) or a friend, get scored, and climb ranks from Bronze to Diamond on the leaderboard.",
   },
   {
     question: "Is it free?",
     answer:
-      "Yes — the core experience (daily updates, unlimited lessons, tool directory, daily missions, duels, streaks) is free forever. WiseAI Pro unlocks an unlimited AI chat tutor, unlimited deep-reads, advanced lessons, spaced repetition, and certificates.",
+      "Yes, the core experience (daily updates, unlimited lessons, tool directory, daily missions, duels, streaks) is free forever. WiseAI Pro unlocks an unlimited AI chat tutor, unlimited deep-reads, advanced lessons, spaced repetition, and certificates.",
   },
   {
     question: "When can I get the app?",
     answer:
-      "WiseAI is in final App Store review for iOS now, with Google Play right behind it. Join the waitlist and we'll email you the moment it's live — you'll be first in line.",
+      "WiseAI is in final App Store review for iOS now, with Google Play right behind it. Join the waitlist and we'll email you the moment it's live, you'll be first in line.",
   },
   {
     question: "How is my data handled?",

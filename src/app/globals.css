@@ -1,34 +1,39 @@
 @import "tailwindcss";
 
-/* ─── WiseAI Design Tokens (synced with app: src/theme/tokens.ts) ─── */
+/* ─── WiseAI Design Tokens ───
+   The site runs LIGHT and playful (Family.co / Brilliant / Duolingo territory)
+   while the app itself is dark navy. Deliberate: Wurtle's soft hand-drawn art
+   reads far better on warm cream than on navy, every top consumer-learning
+   site is light, and the dark app then lands as a reveal after download.
+   Token NAMES are unchanged so every component keeps working. */
 
 :root {
-  /* Backgrounds — deep navy (matches app dark theme) */
-  --wise-bg: #0B1A2B;
-  --wise-surface1: #0F2337;
-  --wise-surface2: #132D44;
-  --wise-surface3: #1A3A54;
+  /* Backgrounds, warm cream */
+  --wise-bg: #FBF6EE;
+  --wise-surface1: #FFFFFF;
+  --wise-surface2: #F4EDE1;
+  --wise-surface3: #ECE3D3;
 
-  /* Accent — vibrant orange (interactive elements, CTAs) */
+  /* Accent, vibrant orange (interactive elements, CTAs) */
   --wise-accent: #F97316;
   --wise-accent-light: #FB923C;
-  --wise-accent-dim: rgba(249, 115, 22, 0.12);
+  --wise-accent-dim: rgba(249, 115, 22, 0.10);
 
-  /* Secondary — deep turquoise (used sparingly: links, small highlights) */
+  /* Secondary, deep turquoise (used sparingly: links, small highlights) */
   --wise-secondary: #0D9488;
-  --wise-secondary-light: #14B8A6;
-  --wise-secondary-dim: rgba(13, 148, 136, 0.12);
+  --wise-secondary-light: #0F766E;
+  --wise-secondary-dim: rgba(13, 148, 136, 0.10);
 
-  /* Text — crisp hierarchy */
-  --wise-text1: #F5F5F7;
-  --wise-text2: #9CA3AF;
-  --wise-text3: #6B7280;
-  --wise-text4: #4B5563;
+  /* Text, warm dark hierarchy */
+  --wise-text1: #292524;
+  --wise-text2: #57534E;
+  --wise-text3: #8A8378;
+  --wise-text4: #B9B1A4;
 
-  /* Borders — hairlines, not glass */
-  --wise-border: rgba(255, 255, 255, 0.12);
-  --wise-border-strong: rgba(255, 255, 255, 0.22);
-  --wise-divider: rgba(255, 255, 255, 0.08);
+  /* Borders, hairlines */
+  --wise-border: rgba(41, 37, 36, 0.10);
+  --wise-border-strong: rgba(41, 37, 36, 0.22);
+  --wise-divider: rgba(41, 37, 36, 0.08);
 
   /* Status */
   --wise-success: #10B981;
@@ -62,6 +67,16 @@
   --animate-fade-in: fade-in 0.5s ease-out forwards;
   --animate-slide-up: slide-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   --animate-marquee: marquee 36s linear infinite;
+  /* Entrance for the hero stack, staggered by animationDelay at each call site.
+     450ms, not the 700ms this started at: measured against Linear, whose
+     staggerIn runs 400ms on cubic-bezier(0.165, 0.84, 0.44, 1). Anything near
+     700ms reads as the page still loading rather than arriving. */
+  --animate-rise: rise 0.45s cubic-bezier(0.22, 1.1, 0.36, 1) backwards;
+  /* Idle drift on the mascot. Deliberately tiny and slow, because the mascot is
+     ALREADY a 61-frame animated WebP: two motion systems on one element reads
+     as restless. Duolingo's own hero characters do not move at all on the web,
+     so this stays closer to a breath than a bob. */
+  --animate-float: float 7s ease-in-out infinite;
 }
 
 /* ─── Keyframes ─── */
@@ -74,6 +89,16 @@
 @keyframes slide-up {
   from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(22px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-7px); }
 }
 
 @keyframes marquee {
@@ -94,7 +119,9 @@
   }
 
   .animate-slide-up,
-  .animate-fade-in {
+  .animate-fade-in,
+  .animate-rise,
+  .animate-float {
     opacity: 1 !important;
     transform: none !important;
   }
@@ -124,8 +151,8 @@ input:focus-visible {
 /* ─── Base Styles ─── */
 
 body {
-  /* Subtle vertical depth — not a decorative blob, just a quiet tonal shift */
-  background: linear-gradient(180deg, #0d1f33 0%, var(--wise-bg) 420px, var(--wise-bg) 100%);
+  /* Subtle vertical depth, not a decorative blob, just a quiet tonal shift */
+  background: linear-gradient(180deg, #F6EEDF 0%, var(--wise-bg) 420px, var(--wise-bg) 100%);
   color: var(--wise-text1);
   font-family: var(--font-inter), "Inter", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -407,4 +434,78 @@ body {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   padding: 2px 28px;
+}
+
+
+/* ─── Press feedback ───
+   A small squish on press. Uses transform only, so it never reflows the page,
+   and it is short enough (120ms) to feel like a physical button rather than an
+   animation the user has to wait out. */
+.btn-press {
+  /* 150ms on colour, matching the 100-160ms band Linear uses for every hover.
+     Properties are listed explicitly rather than `all`, so the compositor is
+     never asked to watch layout properties. */
+  transition: transform 120ms cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              border-color 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              color 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.btn-press:active {
+  transform: scale(0.96);
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-press:active { transform: none; }
+}
+
+/* ─── Mascot sizing ───
+   Named classes rather than Tailwind arbitrary utilities. During development
+   the mascot rendered as a 3px sliver because the dev CSS build had gone stale
+   and `w-[150px]` was missing from the served stylesheet; clearing .next fixed
+   it. Keeping explicit classes anyway, because the mascot is the one element
+   whose collapse is both very visible and easy to miss in a diff. */
+.mascot-hero { width: 150px; height: 150px; }
+.mascot-result { width: 150px; height: 150px; }
+@media (min-width: 640px) {
+  .mascot-hero { width: 180px; height: 180px; }
+}
+
+/* ─── Playful hero additions ─── */
+
+/* Amie-style marker highlight on the key phrase. box-decoration-break keeps
+   the highlight wrapping cleanly if the phrase breaks across lines. */
+.marker {
+  background: linear-gradient(120deg, #FDE68A 0%, #FCD34D 100%);
+  border-radius: 0.35em;
+  padding: 0.02em 0.18em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Floating hero bits, Family.co style. Three timings so neighbours never sync,
+   which is what makes the field feel alive rather than mechanical. */
+@keyframes float-a {
+  0%, 100% { transform: translateY(0) rotate(var(--tilt, -3deg)); }
+  50%      { transform: translateY(-10px) rotate(var(--tilt, -3deg)); }
+}
+@keyframes float-b {
+  0%, 100% { transform: translateY(0) rotate(var(--tilt, 2deg)); }
+  50%      { transform: translateY(-14px) rotate(var(--tilt, 2deg)); }
+}
+@keyframes float-c {
+  0%, 100% { transform: translateY(0) rotate(var(--tilt, -2deg)); }
+  50%      { transform: translateY(-7px) rotate(var(--tilt, -2deg)); }
+}
+.float-a { animation: float-a 7s ease-in-out infinite; }
+.float-b { animation: float-b 8.5s ease-in-out infinite; }
+.float-c { animation: float-c 10s ease-in-out infinite; }
+
+/* Soft card shadow for light surfaces, one consistent elevation. */
+.shadow-soft {
+  box-shadow: 0 1px 2px rgba(41, 37, 36, 0.04), 0 8px 24px -8px rgba(41, 37, 36, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float-a, .float-b, .float-c { animation: none; }
 }

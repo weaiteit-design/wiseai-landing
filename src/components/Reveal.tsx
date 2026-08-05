@@ -8,7 +8,7 @@ interface RevealProps {
   delay?: number;
 }
 
-// Scroll-triggered fade/slide-up — fires once as the element enters the viewport,
+// Scroll-triggered fade/slide-up, fires once as the element enters the viewport,
 // so the page keeps revealing content as you scroll instead of only animating on load.
 export default function Reveal({ children, className = "", delay = 0 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);

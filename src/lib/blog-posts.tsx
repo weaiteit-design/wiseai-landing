@@ -15,14 +15,14 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "chatgpt-vs-claude-vs-gemini",
     title: "ChatGPT vs Claude vs Gemini: Which AI Should You Actually Use in 2026",
     description:
-      "A practical, no-hype comparison of ChatGPT, Claude, and Gemini — what each is actually best at, so you stop guessing and use the right tool for the job.",
+      "A practical, no-hype comparison of ChatGPT, Claude, and Gemini, what each is actually best at, so you stop guessing and use the right tool for the job.",
     publishedAt: "2026-07-03",
     readingTime: "8 min read",
     tags: ["AI Tools", "Comparisons"],
     content: () => (
       <>
         <p>
-          Most people don&apos;t choose an AI assistant — they inherit one.
+          Most people don&apos;t choose an AI assistant, they inherit one.
           Whatever they downloaded first, or whatever their company licensed,
           becomes &quot;their AI,&quot; and every task gets forced through it.
           That&apos;s a shame, because ChatGPT, Claude, and Gemini aren&apos;t
@@ -40,24 +40,24 @@ export const BLOG_POSTS: BlogPost[] = [
           one.
         </p>
 
-        <h2>ChatGPT — best for the everyday assistant role</h2>
+        <h2>ChatGPT, best for the everyday assistant role</h2>
         <p>
           ChatGPT&apos;s biggest advantage is breadth. It has the largest
           ecosystem of custom GPTs, the most mature voice mode, solid image
           generation built in, and the widest range of third-party
           integrations. If you want one app that can plausibly help with
-          almost anything — trip planning, drafting an email, explaining a
-          spreadsheet formula, generating an image for a slide deck — ChatGPT
+          almost anything, trip planning, drafting an email, explaining a
+          spreadsheet formula, generating an image for a slide deck. ChatGPT
           is the safest default. It&apos;s the AI equivalent of a Swiss Army
           knife: not always the sharpest blade, but there&apos;s always a
           tool for the job.
         </p>
 
-        <h2>Claude — best for writing and code you can trust</h2>
+        <h2>Claude, best for writing and code you can trust</h2>
         <p>
           Anthropic built Claude with a noticeably different personality:
           more careful, more willing to say &quot;I&apos;m not sure,&quot;
-          and — by most accounts, including ours — better at producing
+          and, by most accounts, including ours, better at producing
           writing that doesn&apos;t sound like AI wrote it. Its Projects and
           Artifacts features make it genuinely pleasant for working through
           long documents or iterating on a piece of code without losing
@@ -66,9 +66,9 @@ export const BLOG_POSTS: BlogPost[] = [
           ChatGPT for everything else.
         </p>
 
-        <h2>Gemini — best if your life already runs on Google</h2>
+        <h2>Gemini, best if your life already runs on Google</h2>
         <p>
-          Gemini&apos;s advantage isn&apos;t really the model — it&apos;s the
+          Gemini&apos;s advantage isn&apos;t really the model, it&apos;s the
           integration. It reads your Gmail thread, drafts inside the Doc
           you&apos;re already writing, and pulls live Google Search results
           into its answers instead of relying purely on training data. If
@@ -120,7 +120,7 @@ export const BLOG_POSTS: BlogPost[] = [
           All three offer a genuinely useful free tier and a paid tier
           (roughly $20/month) that unlocks their most capable models, longer
           context, and higher usage limits. Pricing and what&apos;s included
-          shifts often enough that we won&apos;t pin exact numbers here —
+          shifts often enough that we won&apos;t pin exact numbers here, 
           check each provider&apos;s pricing page before you commit, and
           don&apos;t assume last year&apos;s comparison still holds.
         </p>
@@ -128,7 +128,7 @@ export const BLOG_POSTS: BlogPost[] = [
         <h2>The real answer: stop picking just one</h2>
         <p>
           The people who get the most out of AI right now aren&apos;t loyal
-          to a single assistant — they know which one to reach for and switch
+          to a single assistant, they know which one to reach for and switch
           without a second thought. That&apos;s the whole idea behind
           WiseAI&apos;s tools directory: instead of committing to one AI and
           hoping it&apos;s the right choice every time, you can compare
@@ -138,18 +138,18 @@ export const BLOG_POSTS: BlogPost[] = [
         <h3>Frequently asked questions</h3>
         <p>
           <strong>Is Claude better than ChatGPT for coding?</strong> For most
-          developers, yes — Claude&apos;s longer effective context and more
+          developers, yes. Claude&apos;s longer effective context and more
           careful reasoning tend to produce fewer subtle bugs in larger
           codebases, though ChatGPT has closed much of that gap.
         </p>
         <p>
           <strong>Which one is actually free?</strong> All three have a real
-          free tier, not just a trial — though free tiers get rate-limited to
+          free tier, not just a trial, though free tiers get rate-limited to
           their less capable models during high demand.
         </p>
         <p>
           <strong>Can I use more than one for the same project?</strong>{" "}
-          Yes, and many professionals do — for example, drafting in Claude
+          Yes, and many professionals do, for example, drafting in Claude
           and fact-checking with Gemini&apos;s search grounding.
         </p>
       </>
@@ -159,7 +159,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "15-minutes-a-day-vs-weekend-bootcamp",
     title: "Why 15 Minutes a Day Beats a Weekend Bootcamp for Learning AI",
     description:
-      "The science of spaced repetition explains why cramming AI skills into a weekend rarely sticks — and why a short daily habit builds real, lasting fluency instead.",
+      "The science of spaced repetition explains why cramming AI skills into a weekend rarely sticks, and why a short daily habit builds real, lasting fluency instead.",
     publishedAt: "2026-07-03",
     readingTime: "7 min read",
     tags: ["Learning Science", "Productivity"],
@@ -181,7 +181,7 @@ export const BLOG_POSTS: BlogPost[] = [
         <p>
           In the 1880s, psychologist Hermann Ebbinghaus ran a simple
           experiment on himself: memorize something, then test his own recall
-          over time. The result — now called the forgetting curve — showed
+          over time. The result, now called the forgetting curve, showed
           that without reinforcement, we lose the majority of new information
           within days, regardless of how well we learned it in the first
           place. A century of follow-up research has only reinforced the
@@ -196,7 +196,7 @@ export const BLOG_POSTS: BlogPost[] = [
           But absorption and retention are different problems, and most
           learning products only solve the first one. You can leave a
           weekend course feeling like you understand prompt engineering,
-          image generation, and AI agents — and still be unable to explain
+          image generation, and AI agents, and still be unable to explain
           any of it to a colleague three weeks later, because nothing forced
           your brain to retrieve that information again before it faded.
         </p>
@@ -208,7 +208,7 @@ export const BLOG_POSTS: BlogPost[] = [
           material in short bursts spaced out over time. Each time you
           retrieve something just before you&apos;d otherwise forget it, the
           memory gets reinforced and the next forgetting curve flattens out.
-          Decades of cognitive science research point the same direction —
+          Decades of cognitive science research point the same direction, 
           short, spaced, repeated exposure beats long, one-off sessions for
           anything you actually want to retain, not just recognize.
         </p>
@@ -221,7 +221,7 @@ export const BLOG_POSTS: BlogPost[] = [
         <ul>
           <li>
             <strong>Bite-sized.</strong> Sessions short enough that skipping
-            isn&apos;t an option you&apos;d even consider — five to fifteen
+            isn&apos;t an option you&apos;d even consider, five to fifteen
             minutes, not an hour.
           </li>
           <li>
@@ -236,14 +236,14 @@ export const BLOG_POSTS: BlogPost[] = [
           </li>
           <li>
             <strong>Visible progress.</strong> A streak, a level, or some
-            marker of momentum — accountability that makes tomorrow&apos;s
+            marker of momentum, accountability that makes tomorrow&apos;s
             session feel like a continuation, not a restart.
           </li>
         </ul>
         <p>
           This is exactly why WiseAI&apos;s home screen is built around four
-          daily missions — read an update, finish a lesson, explore a tool,
-          complete a warmup — instead of one long course. It&apos;s not a
+          daily missions, read an update, finish a lesson, explore a tool,
+          complete a warmup, instead of one long course. It&apos;s not a
           gimmick; it&apos;s spaced practice with a UI wrapped around it.
         </p>
 
@@ -251,7 +251,7 @@ export const BLOG_POSTS: BlogPost[] = [
         <p>You don&apos;t need an app to apply the underlying principle:</p>
         <ol>
           <li>
-            Pick a fixed, tiny time slot — coffee, commute, or lunch — and
+            Pick a fixed, tiny time slot, coffee, commute, or lunch, and
             protect it rather than trying to &quot;find time&quot; for a
             longer session.
           </li>
@@ -260,8 +260,8 @@ export const BLOG_POSTS: BlogPost[] = [
             instead of only moving forward to new material.
           </li>
           <li>
-            Force yourself to produce something — a prompt, a summary, an
-            answer — rather than just re-reading notes.
+            Force yourself to produce something, a prompt, a summary, an
+            answer, rather than just re-reading notes.
           </li>
           <li>
             Track a streak somewhere visible. The goal isn&apos;t the streak
@@ -275,13 +275,13 @@ export const BLOG_POSTS: BlogPost[] = [
           <strong>Isn&apos;t some information better learned all at once?</strong>{" "}
           For genuinely sequential, hands-on skills (like following a single
           complex tutorial), a longer block can make sense. But for building
-          durable knowledge — which tool to use when, how prompting actually
-          works, what&apos;s changing in AI — spaced practice wins.
+          durable knowledge, which tool to use when, how prompting actually
+          works, what&apos;s changing in AI, spaced practice wins.
         </p>
         <p>
           <strong>How long until a daily AI habit actually pays off?</strong>{" "}
-          Most people notice a real shift in fluency — reaching for the right
-          tool without thinking, writing better prompts on the first try —
+          Most people notice a real shift in fluency, reaching for the right
+          tool without thinking, writing better prompts on the first try, 
           somewhere around four to six weeks of consistent daily practice.
         </p>
       </>
@@ -291,18 +291,18 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "whats-your-ai-iq",
     title: "What's Your AI IQ? How to Measure (and Improve) Your AI Fluency",
     description:
-      "AI fluency isn't about knowing the newest model — it's a specific, learnable skill set. Here's a framework to self-assess where you stand, and how to level up.",
+      "AI fluency isn't about knowing the newest model, it's a specific, learnable skill set. Here's a framework to self-assess where you stand, and how to level up.",
     publishedAt: "2026-07-03",
     readingTime: "7 min read",
     tags: ["AI Literacy", "Self-Assessment"],
     content: () => (
       <>
         <p>
-          &quot;AI IQ&quot; is a bit of a joke of a phrase — it has nothing
+          &quot;AI IQ&quot; is a bit of a joke of a phrase, it has nothing
           to do with your actual IQ. What it really measures is AI
           fluency: how effectively you can get useful, reliable results out
           of AI tools in real situations. That turns out to be a specific,
-          learnable skill, and — unlike traditional IQ — one you can
+          learnable skill, and, unlike traditional IQ, one you can
           meaningfully improve in weeks, not years.
         </p>
 
@@ -320,7 +320,7 @@ export const BLOG_POSTS: BlogPost[] = [
           </li>
           <li>
             <strong>Capable.</strong> You use AI regularly for specific
-            tasks — drafting emails, summarizing documents — but your
+            tasks, drafting emails, summarizing documents, but your
             prompts are short and you often accept the first answer without
             iterating.
           </li>
@@ -331,7 +331,7 @@ export const BLOG_POSTS: BlogPost[] = [
           </li>
           <li>
             <strong>Integrated.</strong> AI is woven into your actual
-            workflow, not a separate tab you visit — it shows up inside your
+            workflow, not a separate tab you visit, it shows up inside your
             writing tool, your code editor, your research process, and you
             reach for the right one instinctively.
           </li>
@@ -343,14 +343,14 @@ export const BLOG_POSTS: BlogPost[] = [
         </p>
         <ul>
           <li>Can you name which AI tool you&apos;d reach for to summarize a 40-page PDF, and why?</li>
-          <li>When an AI gives you a wrong answer, do you usually notice — or only when someone else points it out?</li>
+          <li>When an AI gives you a wrong answer, do you usually notice, or only when someone else points it out?</li>
           <li>Do you rewrite your first prompt when the result is mediocre, or move on?</li>
-          <li>Have you used an AI tool for something beyond chat — image generation, code, voice, an agent that takes multi-step actions?</li>
+          <li>Have you used an AI tool for something beyond chat, image generation, code, voice, an agent that takes multi-step actions?</li>
           <li>Could you explain the difference between two major AI assistants to a friend right now?</li>
         </ul>
         <p>
           If you answered &quot;no&quot; or &quot;not really&quot; to most of
-          these, you&apos;re probably at Aware or Capable — and that&apos;s a
+          these, you&apos;re probably at Aware or Capable, and that&apos;s a
           completely normal place to start, not a criticism.
         </p>
 
@@ -374,7 +374,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
         <h2>Why fluency compounds</h2>
         <p>
-          The gap between Aware and Integrated isn&apos;t linear — it
+          The gap between Aware and Integrated isn&apos;t linear, it
           compounds. Someone at the Integrated stage isn&apos;t just faster;
           they&apos;re solving problems that never occur to someone still
           treating AI as a search box. That gap is exactly why we built an
@@ -385,13 +385,13 @@ export const BLOG_POSTS: BlogPost[] = [
 
         <h3>Frequently asked questions</h3>
         <p>
-          <strong>Is a high AI IQ the same as being technical?</strong> No —
+          <strong>Is a high AI IQ the same as being technical?</strong> No, 
           fluency is about judgment and habits, not coding ability. Some of
           the most AI-fluent people we&apos;ve met have never written a line
           of code.
         </p>
         <p>
-          <strong>Does AI fluency go stale?</strong> Somewhat — the tools
+          <strong>Does AI fluency go stale?</strong> Somewhat, the tools
           change fast enough that staying current matters as much as the
           underlying skill, which is why pairing daily practice with daily
           news is more effective than either alone.
@@ -403,7 +403,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "best-ai-learning-apps-2026",
     title: "Best AI Learning Apps in 2026 (Honestly Compared)",
     description:
-      "A genuine, non-sponsored comparison of the apps and platforms actually worth your time if you want real AI fluency in 2026 — including where WiseAI fits, and where it doesn't.",
+      "A genuine, non-sponsored comparison of the apps and platforms actually worth your time if you want real AI fluency in 2026, including where WiseAI fits, and where it doesn't.",
     publishedAt: "2026-07-03",
     readingTime: "9 min read",
     tags: ["App Reviews", "Comparisons"],
@@ -414,7 +414,7 @@ export const BLOG_POSTS: BlogPost[] = [
           thin: repackaged blog posts sold as courses, or generic
           productivity apps with an &quot;AI&quot; badge slapped on late.
           Here&apos;s an honest breakdown of the categories that actually
-          exist right now — including where our own app, WiseAI, fits and
+          exist right now, including where our own app, WiseAI, fits and
           where it doesn&apos;t.
         </p>
 
@@ -423,7 +423,7 @@ export const BLOG_POSTS: BlogPost[] = [
         <ul>
           <li><strong>Current.</strong> AI changes monthly; a course refreshed once a year is already stale.</li>
           <li><strong>Practical, not just theoretical.</strong> You should leave able to do something, not just recite definitions.</li>
-          <li><strong>Actively tested.</strong> Quizzes, exercises, or real tool use — not passive video only.</li>
+          <li><strong>Actively tested.</strong> Quizzes, exercises, or real tool use, not passive video only.</li>
           <li><strong>Genuinely daily.</strong> Built for a 10-15 minute habit, not a weekend sprint (see our <a href="/blog/15-minutes-a-day-vs-weekend-bootcamp">piece on why that matters</a>).</li>
         </ul>
 
@@ -441,7 +441,7 @@ export const BLOG_POSTS: BlogPost[] = [
         <p>
           Sites like Learn Prompting and the documentation pages published
           directly by OpenAI, Anthropic, and Google are genuinely excellent
-          for going deep on one specific skill — prompting technique,
+          for going deep on one specific skill, prompting technique,
           especially. They&apos;re reference material, though, not a daily
           habit loop: there&apos;s no built-in reason to come back tomorrow,
           and no news layer to keep you current on what changed this week.
@@ -449,7 +449,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
         <h2>Micro-learning apps built specifically for AI</h2>
         <p>
-          This is the newest and smallest category — apps modeled on the
+          This is the newest and smallest category, apps modeled on the
           Duolingo-style daily habit loop, but built for AI literacy
           specifically instead of language learning. It&apos;s a young
           space. Iro AI is the closest comparable app we&apos;re aware of,
@@ -465,7 +465,7 @@ export const BLOG_POSTS: BlogPost[] = [
           staying current on AI shouldn&apos;t be two different apps. One
           daily habit gets you a personalized news briefing from 30+
           sources, bite-sized interactive lessons, a directory of 50+ tools
-          compared honestly, and — for people who like a bit of competition —
+          compared honestly, and, for people who like a bit of competition, 
           AI duels against an honest trainer bot or a friend. We&apos;re
           launching soon and still early, so some content areas are deeper
           than others today. If you want the news-plus-lessons-plus-tools
@@ -487,11 +487,11 @@ export const BLOG_POSTS: BlogPost[] = [
         <p>
           <strong>Do I need more than one AI learning resource?</strong>{" "}
           Plenty of people pair a course (for depth on one topic) with a
-          daily micro-learning app (for habit and currency) — they solve
+          daily micro-learning app (for habit and currency), they solve
           different problems.
         </p>
         <p>
-          <strong>Is WiseAI free?</strong> Yes — the core experience
+          <strong>Is WiseAI free?</strong> Yes, the core experience
           (daily updates, lessons, tool directory, duels) is free forever,
           with an optional Pro tier for unlimited AI chat and deep-reads.
         </p>

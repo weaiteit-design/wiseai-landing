@@ -5,12 +5,12 @@ import Footer from "@/components/Footer";
 import { BLOG_POSTS } from "@/lib/blog-posts";
 
 export const metadata: Metadata = {
-  title: "Blog — WiseAI",
+  title: "Blog. WiseAI",
   description:
-    "Practical, no-hype writing on AI tools, learning science, and how to actually build AI fluency — from the team building WiseAI.",
+    "Practical, no-hype writing on AI tools, learning science, and how to actually build AI fluency, from the team building WiseAI.",
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "Blog — WiseAI",
+    title: "Blog. WiseAI",
     description:
       "Practical, no-hype writing on AI tools, learning science, and how to actually build AI fluency.",
     url: "https://www.thewiseai.app/blog",

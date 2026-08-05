@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import LegalLayout from "@/components/LegalLayout";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — WiseAI",
+  title: "Terms of Service. WiseAI",
   description: "The terms governing your use of the WiseAI app and services.",
   alternates: { canonical: "/terms" },
 };
@@ -49,21 +49,21 @@ export default function TermsPage() {
       </p>
       <ul>
         <li>
-          <strong>Auto-renewal</strong> — paid subscriptions renew automatically
+          <strong>Auto-renewal</strong>, paid subscriptions renew automatically
           at the end of each billing period unless canceled at least 24 hours
           before renewal.
         </li>
         <li>
-          <strong>Cancellation</strong> — you can cancel anytime from your
+          <strong>Cancellation</strong>, you can cancel anytime from your
           App Store or Google Play subscription settings. Cancellation takes
           effect at the end of the current billing period.
         </li>
         <li>
-          <strong>Refunds</strong> — refund requests are handled by Apple or
+          <strong>Refunds</strong>, refund requests are handled by Apple or
           Google according to their policies.
         </li>
         <li>
-          <strong>Free trials</strong> — if a free trial is offered, you'll be
+          <strong>Free trials</strong>, if a free trial is offered, you'll be
           charged when it ends unless canceled before then.
         </li>
       </ul>

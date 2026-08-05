@@ -10,7 +10,7 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-// Editorial display serif — the signature move on premium AI product sites
+// Editorial display serif, the signature move on premium AI product sites
 // (Perplexity, Claude, Manus) pivoting away from generic geometric sans.
 const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
@@ -21,22 +21,22 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "WiseAI — Master AI Before It Masters You",
+  title: "WiseAI: Get Good at AI in 10 Minutes a Day",
   description:
-    "Daily AI news, bite-sized lessons, 50+ tool comparisons, and AI duels — one app, 15 minutes a day. Launching soon on iOS & Android. Join the waitlist.",
+    "Short daily lessons, real practice, and the AI news that matters. Take the free 2-minute AI IQ test, then build a plan. On the App Store.",
   keywords: [
     "AI learning app",
     "learn artificial intelligence",
     "AI news app",
     "AI tools directory",
     "Duolingo for AI",
+    "AI skills test",
     "AI education",
     "WiseAI",
     "AI literacy",
     "micro-lessons AI",
     "ChatGPT lessons",
     "Claude lessons",
-    "AI duels",
     "AI IQ test",
   ],
   authors: [{ name: "WiseAI" }],
@@ -46,9 +46,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "WiseAI — Master AI Before It Masters You",
+    title: "WiseAI: Get Good at AI in 10 Minutes a Day",
     description:
-      "Personalized AI news, 500+ micro-lessons, 50+ tool comparisons, AI duels, and gamified learning. Launching soon — join the waitlist.",
+      "Short daily lessons, real practice, and the AI news that matters. Free 2-minute AI IQ test, no signup.",
     url: "https://www.thewiseai.app",
     siteName: "WiseAI",
     locale: "en_US",
@@ -56,9 +56,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "WiseAI — Master AI Before It Masters You",
+    title: "WiseAI: Get Good at AI in 10 Minutes a Day",
     description:
-      "The all-in-one app for AI fluency. Launching soon — join the waitlist.",
+      "Get good at AI in 10 minutes a day. Take the free 2-minute AI IQ test.",
   },
   robots: {
     index: true,

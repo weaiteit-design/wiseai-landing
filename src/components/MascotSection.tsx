@@ -15,12 +15,12 @@ export default function MascotSection() {
           <p className="text-sm leading-relaxed text-[var(--wise-text2)] sm:text-base">
             Wurtle cheers you on through every lesson, celebrates your
             streaks, and nudges you back when life gets busy. Slow and
-            steady wins the AI race — that&apos;s the whole point.
+            steady wins the AI race, that&apos;s the whole point.
           </p>
         </div>
 
         <div className="flex shrink-0 items-end gap-4 sm:gap-6">
-          {/* Animated clip — plain img so the WebP animation actually plays */}
+          {/* Animated clip, plain img so the WebP animation actually plays */}
           <img
             src="/mascot/wurtle-celebrate.webp"
             alt="Wurtle the mascot celebrating a streak"

@@ -33,7 +33,7 @@ export default function Pricing() {
           </ul>
         </div>
 
-        {/* Pro — distinguished by a solid accent top bar, not a glow blob */}
+        {/* Pro, distinguished by a solid accent top bar, not a glow blob */}
         <div className="border-t-2 border-[var(--wise-accent)] p-7 sm:p-9">
           <div className="mb-1 flex items-center gap-2">
             <h3 className="heading-font text-2xl text-[var(--wise-text1)]">

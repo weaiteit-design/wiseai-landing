@@ -6,7 +6,7 @@ interface DownloadButtonsProps {
   variant?: "hero" | "section";
 }
 
-// Store links go live once each build clears review — until then, both
+// Store links go live once each build clears review, until then, both
 // badges scroll to the waitlist so visitors can still get on the list.
 export default function DownloadButtons({ variant = "hero" }: DownloadButtonsProps) {
   const sizing =
@@ -20,7 +20,7 @@ export default function DownloadButtons({ variant = "hero" }: DownloadButtonsPro
 
   return (
     <div className="flex flex-col items-stretch gap-3 sm:flex-row">
-      {/* App Store — in review */}
+      {/* App Store, in review */}
       <button
         type="button"
         onClick={scrollToWaitlist}
@@ -36,7 +36,7 @@ export default function DownloadButtons({ variant = "hero" }: DownloadButtonsPro
         </div>
       </button>
 
-      {/* Play Store — coming right after */}
+      {/* Play Store, coming right after */}
       <button
         type="button"
         onClick={scrollToWaitlist}

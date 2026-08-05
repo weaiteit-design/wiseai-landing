@@ -15,7 +15,7 @@ export default function Features() {
         </h2>
       </Reveal>
 
-      {/* Editorial feature list — hairline dividers, numbered, no icon tiles */}
+      {/* Editorial feature list, hairline dividers, numbered, no icon tiles */}
       <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-3">
         {FEATURES.map((feature, i) => (
           <FeatureCard key={feature.title} {...feature} index={i} />

@@ -199,6 +199,160 @@ export const AI_IQ_QUESTIONS: IqQuestion[] = [
     correctIndex: 0,
     explanation: 'Custom instructions or memory persist across chats and can be shared; one endless chat degrades and pasting every time is brittle.',
   },
+  {
+    question: "A task needs careful multi-step logic and you can afford a few extra seconds. What do you reach for?",
+    options: [
+      "A reasoning model that works through steps before answering",
+      "The fastest, cheapest chat model available",
+      "A model with the largest context window",
+      "A vision model, since it handles more input types",
+    ],
+    correctIndex: 0,
+    explanation: "Reasoning models spend extra compute on intermediate steps, which is exactly what multi-step logic needs. Speed, context length and vision solve unrelated problems.",
+  },
+  {
+    question: "Your assistant must answer from a company handbook that changes every week. The right architecture?",
+    options: [
+      "Retrieve the relevant handbook passages at query time",
+      "Fine-tune the model on the handbook every week",
+      "Paste the entire handbook into the system prompt",
+      "Lower the temperature so it stops inventing answers",
+    ],
+    correctIndex: 0,
+    explanation: "Retrieval keeps the source of truth outside the model, so an edit is live the moment it is saved. Fine-tuning bakes knowledge in and has to be redone constantly.",
+  },
+  {
+    question: "Your agent reads public web pages and can send email. What should you design against?",
+    options: [
+      "Instructions hidden inside a page hijacking the agent",
+      "The model running out of context window",
+      "Rate limits from your email provider",
+      "Pages written in a language you did not expect",
+    ],
+    correctIndex: 0,
+    explanation: "Any text an agent reads can contain instructions. Treat fetched content as untrusted data, and never let it authorize an action on its own.",
+  },
+  {
+    question: "Search must find \"how do I cancel\" when the document says \"ending your subscription\". What powers that?",
+    options: [
+      "Embedding both and comparing them by meaning",
+      "A keyword index with wildcard matching",
+      "A larger context window",
+      "Raising the temperature for looser matches",
+    ],
+    correctIndex: 0,
+    explanation: "Embeddings map text into vectors by meaning, so different wording for the same idea lands close together. Keyword search misses it because no words actually overlap.",
+  },
+  {
+    question: "The model understands the task but keeps formatting the answer wrong. Cheapest reliable fix?",
+    options: [
+      "Show it two or three worked examples",
+      "Switch to a substantially larger model",
+      "Raise the maximum output token limit",
+      "Repeat the instruction in capital letters",
+    ],
+    correctIndex: 0,
+    explanation: "Examples communicate shape far more reliably than description does. Model size, token limits and emphasis do not teach format.",
+  },
+  {
+    question: "You are brainstorming product names and want genuinely varied options. Which setting?",
+    options: [
+      "Raise the temperature",
+      "Set the temperature to zero",
+      "Increase the context window",
+      "Add a stop sequence after each name",
+    ],
+    correctIndex: 0,
+    explanation: "Temperature controls randomness during sampling. Zero makes output repeatable and samey, which is the opposite of what brainstorming needs.",
+  },
+  {
+    question: "A generated image is perfect except for one mangled hand. Fastest route to a usable image?",
+    options: [
+      "Mask just the hand and inpaint that region",
+      "Regenerate the whole image with a new seed",
+      "Upscale it and hope the hand resolves",
+      "Add \"perfect hands\" to the negative prompt and retry",
+    ],
+    correctIndex: 0,
+    explanation: "Inpainting edits only the masked region and preserves everything else. Regenerating throws away an image that already works.",
+  },
+  {
+    question: "You have 200 scanned invoices as images and need the totals in a spreadsheet. What does the work?",
+    options: [
+      "A vision model reading each image into structured fields",
+      "A text-only chat model given the filenames",
+      "An image generation model",
+      "A speech to text model",
+    ],
+    correctIndex: 0,
+    explanation: "Vision models read pixels and can emit structured fields per document. A text model cannot see the file at all.",
+  },
+  {
+    question: "You tweaked a prompt and it feels better. How do you know that it actually is?",
+    options: [
+      "Run both versions against a fixed set of test cases and score them",
+      "Try it a few times and trust your judgement",
+      "Ask the model which of the two prompts is better",
+      "Check whether the new output is longer and more detailed",
+    ],
+    correctIndex: 0,
+    explanation: "A fixed test set turns \"feels better\" into a measurable comparison. Impressions drift, and a model asked to grade itself is not evidence.",
+  },
+  {
+    question: "A 900-page manual will not fit in one prompt. Standard approach?",
+    options: [
+      "Split it into chunks and retrieve only the relevant ones",
+      "Summarize it repeatedly until it fits",
+      "Send it across twenty consecutive messages",
+      "Switch to a higher temperature to compress it",
+    ],
+    correctIndex: 0,
+    explanation: "Chunking plus retrieval sends only the passages that matter to the question. Summarizing first destroys the detail you will later need to quote.",
+  },
+  {
+    question: "You want the model to look up a live order status mid-conversation. What makes that possible?",
+    options: [
+      "Give it a tool it can call for the lookup",
+      "Paste the order database into the prompt",
+      "Fine-tune it on a year of past orders",
+      "Raise its maximum output tokens",
+    ],
+    correctIndex: 0,
+    explanation: "Tool calling lets the model request live data and use what comes back. Pasted or fine-tuned data is a snapshot that is stale the moment it is written.",
+  },
+  {
+    question: "Rules that must hold for every message in a long conversation belong where?",
+    options: [
+      "In the system prompt",
+      "Repeated inside every single user message",
+      "In the first user message only",
+      "In the model's temperature setting",
+    ],
+    correctIndex: 0,
+    explanation: "The system prompt persists across the whole conversation and is weighted as standing instruction. A rule stated once in the first message gets buried as the chat grows.",
+  },
+  {
+    question: "Your AI-written summary has to be checkable by a colleague. What do you require from it?",
+    options: [
+      "A quoted source passage supporting each claim",
+      "A confidence percentage next to each claim",
+      "A longer and more thorough write-up",
+      "A lower temperature during generation",
+    ],
+    correctIndex: 0,
+    explanation: "A quoted passage can be checked against the original document. Confidence numbers are self-reported, and lower temperature does not make a claim true.",
+  },
+  {
+    question: "You want your written lesson available as natural audio for the commute. What produces it?",
+    options: [
+      "A text to speech model",
+      "A speech to text model",
+      "An embedding model",
+      "A vision model",
+    ],
+    correctIndex: 0,
+    explanation: "Text to speech turns your text into spoken audio. Speech to text does the reverse, and neither embeddings nor vision produce sound.",
+  },
 ];
 
 export function scoreToBand(score: number): IqBand {

@@ -18,6 +18,10 @@ export default function IqTest() {
   const [selected, setSelected] = useState<number | null>(null);
   const [score, setScore] = useState(0);
   const [done, setDone] = useState(false);
+  // The questions they got wrong. This is the whole funnel: a generic score is
+  // forgettable, but "here are the four things that tripped you up, and the app
+  // teaches exactly these" gives the download a concrete reason.
+  const [missed, setMissed] = useState<IqQuestion[]>([]);
 
   const question = questions[index];
   const answered = selected !== null;
@@ -29,6 +33,7 @@ export default function IqTest() {
       if (answered) return;
       setSelected(i);
       if (i === question.correctIndex) setScore((s) => s + 1);
+      else setMissed((m) => [...m, question]);
     },
     [answered, question],
   );
@@ -47,6 +52,7 @@ export default function IqTest() {
     setIndex(0);
     setSelected(null);
     setScore(0);
+    setMissed([]);
     setDone(false);
   }, []);
 
@@ -94,16 +100,55 @@ export default function IqTest() {
           {band.blurb}
         </p>
 
+        {/* The gap list. This is the conversion moment: a bare score is
+            forgettable, but naming the exact things that tripped you up, then
+            offering lessons on those, makes the download specific. Capped at
+            three so it reads as a next step rather than a report card. */}
+        {missed.length > 0 && (
+          <div
+            className="animate-rise mt-10 w-full max-w-[520px] rounded-[24px] border border-[var(--wise-border)] bg-[var(--wise-surface1)] p-6 text-left"
+            style={{ animationDelay: "0.35s" }}
+          >
+            <p className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--wise-accent)]">
+              Your gaps
+            </p>
+            <ul className="mt-4 flex flex-col gap-3">
+              {missed.slice(0, 3).map((m) => (
+                <li key={m.question} className="flex gap-3">
+                  <span
+                    aria-hidden="true"
+                    className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--wise-accent)]"
+                  />
+                  <span className="text-[15px] leading-[1.55] text-[var(--wise-text2)]">
+                    {m.question}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            {missed.length > 3 && (
+              <p className="mt-4 text-[14px] text-[var(--wise-text3)]">
+                And {missed.length - 3} more.
+              </p>
+            )}
+            <p className="mt-5 text-[15px] font-semibold text-[var(--wise-text1)]">
+              WiseAI has lessons on every one of these.
+            </p>
+          </div>
+        )}
+
         <div
           className="animate-rise mt-10 flex w-full max-w-[340px] flex-col gap-3"
-          style={{ animationDelay: "0.4s" }}
+          style={{ animationDelay: "0.45s" }}
         >
           <a
             href={APP_STORE_URL}
-            className="btn-press flex min-h-[56px] items-center justify-center rounded-2xl bg-[var(--wise-accent)] px-8 text-[15px] font-semibold uppercase tracking-[0.06em] text-[#1A0E04] hover:bg-[var(--wise-accent-light)]"
+            className="btn-press shadow-soft flex min-h-[56px] items-center justify-center rounded-2xl bg-[var(--wise-accent)] px-8 text-[15px] font-bold uppercase tracking-[0.06em] text-white hover:bg-[var(--wise-accent-light)]"
           >
-            Build my learning plan
+            {missed.length > 0 ? "Close these gaps" : "Start my plan"}
           </a>
+          <p className="text-[13px] text-[var(--wise-text3)]">
+            Free to download. 10 minutes a day.
+          </p>
           <button
             type="button"
             onClick={retake}

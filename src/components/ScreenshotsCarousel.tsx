@@ -6,14 +6,14 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Reveal from "./Reveal";
 
 const SCREENSHOTS = [
-  { src: "/screenshots/01_home_daily_path.png", alt: "WiseAI Home — your daily path to practical AI skills, with streaks, XP, and today's missions" },
-  { src: "/screenshots/02_roadmap_good_better_wiseai.png", alt: "WiseAI learning roadmap — a personalized journey from zero to AI-fluent, guided by Wurtle" },
-  { src: "/screenshots/03_practice_real_skills.png", alt: "WiseAI Practice Hub — warm-ups, guided exercises, and tool mastery paths for ChatGPT, Claude, and more" },
-  { src: "/screenshots/04_updates_daily_brief.png", alt: "WiseAI Updates — today's AI briefing, handpicked and turned into actionable insights" },
-  { src: "/screenshots/05_article_audio_deep_read.png", alt: "WiseAI article view — read or listen deeply, with narrated summaries and key insights" },
-  { src: "/screenshots/06_tools_discovery.png", alt: "WiseAI Tools — find the right AI tool fast, matched to your task" },
-  { src: "/screenshots/07_community_discussion.png", alt: "WiseAI Community — learn with other AI builders through tips, reviews, and discussions" },
-  { src: "/screenshots/08_progress_profile.png", alt: "WiseAI Profile — show your AI progress with XP, streaks, and a full activity calendar" },
+  { src: "/screenshots/01_home_daily_path.png", alt: "WiseAI Home, your daily path to practical AI skills, with streaks, XP, and today's missions" },
+  { src: "/screenshots/02_roadmap_good_better_wiseai.png", alt: "WiseAI learning roadmap, a personalized journey from zero to AI-fluent, guided by Wurtle" },
+  { src: "/screenshots/03_practice_real_skills.png", alt: "WiseAI Practice Hub, warm-ups, guided exercises, and tool mastery paths for ChatGPT, Claude, and more" },
+  { src: "/screenshots/04_updates_daily_brief.png", alt: "WiseAI Updates, today's AI briefing, handpicked and turned into actionable insights" },
+  { src: "/screenshots/05_article_audio_deep_read.png", alt: "WiseAI article view, read or listen deeply, with narrated summaries and key insights" },
+  { src: "/screenshots/06_tools_discovery.png", alt: "WiseAI Tools, find the right AI tool fast, matched to your task" },
+  { src: "/screenshots/07_community_discussion.png", alt: "WiseAI Community, learn with other AI builders through tips, reviews, and discussions" },
+  { src: "/screenshots/08_progress_profile.png", alt: "WiseAI Profile, show your AI progress with XP, streaks, and a full activity calendar" },
 ];
 
 export default function ScreenshotsCarousel() {
@@ -37,7 +37,7 @@ export default function ScreenshotsCarousel() {
           </h2>
         </div>
 
-        {/* Prev/Next controls — desktop only, touch devices swipe */}
+        {/* Prev/Next controls, desktop only, touch devices swipe */}
         <div className="hidden shrink-0 gap-2 sm:flex">
           <button
             type="button"

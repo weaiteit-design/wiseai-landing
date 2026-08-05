@@ -4,7 +4,7 @@ import { join } from "path";
 import { getGoogleFont } from "@/lib/og-fonts";
 
 export const runtime = "nodejs";
-export const alt = "WiseAI — Master AI before it masters you";
+export const alt = "WiseAI. Master AI before it masters you";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

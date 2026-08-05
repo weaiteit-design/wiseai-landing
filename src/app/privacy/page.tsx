@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import LegalLayout from "@/components/LegalLayout";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — WiseAI",
+  title: "Privacy Policy. WiseAI",
   description:
     "How WiseAI collects, uses, and protects your personal information.",
   alternates: { canonical: "/privacy" },
@@ -31,16 +31,16 @@ export default function PrivacyPage() {
       </p>
       <ul>
         <li>
-          <strong>Email address</strong> — used for authentication, account
+          <strong>Email address</strong>, used for authentication, account
           recovery, and important service communications.
         </li>
         <li>
-          <strong>Name and profile photo</strong> — if you sign in with Google
+          <strong>Name and profile photo</strong>, if you sign in with Google
           or Apple, we receive your name and profile picture from those
           providers (with your permission).
         </li>
         <li>
-          <strong>Optional onboarding answers</strong> — such as your role,
+          <strong>Optional onboarding answers</strong>, such as your role,
           industry, AI experience level, and topics of interest. These power
           your personalized feed and lesson recommendations.
         </li>
@@ -98,18 +98,18 @@ export default function PrivacyPage() {
       </p>
       <ul>
         <li>
-          <strong>Service providers</strong> — Supabase (database & auth),
+          <strong>Service providers</strong>. Supabase (database & auth),
           Google Gemini (AI features), Sentry (crash reporting), RevenueCat
           (subscriptions), Apple/Google (sign-in & payments). Each operates
           under their own privacy policies and is contractually bound to
           protect your data.
         </li>
         <li>
-          <strong>Legal requirements</strong> — when required by law, valid
+          <strong>Legal requirements</strong>, when required by law, valid
           legal process, or to protect our rights and safety.
         </li>
         <li>
-          <strong>Business transfers</strong> — in the event of a merger,
+          <strong>Business transfers</strong>, in the event of a merger,
           acquisition, or asset sale, your information may be transferred.
           You'll be notified before this happens.
         </li>

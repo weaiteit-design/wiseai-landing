@@ -17,7 +17,7 @@ export async function generateMetadata({
   if (!post) return {};
 
   return {
-    title: `${post.title} — WiseAI Blog`,
+    title: `${post.title}. WiseAI Blog`,
     description: post.description,
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {

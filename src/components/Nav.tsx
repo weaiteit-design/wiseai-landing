@@ -1,37 +1,19 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { APP_STORE_URL } from "@/lib/constants";
 
+/**
+ * Logo, one link, one CTA.
+ *
+ * The previous nav linked to #tour, #features, #pricing and #faq, plus a
+ * "Join Waitlist" button, for an app that shipped in June. Those sections no
+ * longer exist on the homepage, so every one of those anchors was dead. With
+ * two items left there is nothing to collapse, so the hamburger menu and its
+ * client state are gone and this is a server component again.
+ */
 export default function Nav() {
-  const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const links = [
-    { href: "/#tour", label: "Tour" },
-    { href: "/#features", label: "Features" },
-    { href: "/#pricing", label: "Pricing" },
-    { href: "/blog", label: "Blog" },
-    { href: "/#faq", label: "FAQ" },
-  ];
-
   return (
-    <nav
-      className={`sticky top-0 z-50 w-full border-b transition-colors duration-200 ${
-        scrolled
-          ? "border-[var(--wise-divider)] bg-[var(--wise-bg)]"
-          : "border-transparent"
-      }`}
-    >
+    <nav className="sticky top-0 z-50 w-full border-b border-[var(--wise-divider)] bg-[var(--wise-bg)]/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-3.5 sm:px-8">
         <Link href="/" className="flex items-center gap-2" aria-label="WiseAI home">
           <Image
@@ -44,60 +26,21 @@ export default function Nav() {
           />
         </Link>
 
-        {/* Desktop links */}
-        <div className="hidden items-center gap-8 md:flex">
-          {links.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className="text-sm text-[var(--wise-text2)] transition-colors hover:text-[var(--wise-text1)]"
-            >
-              {l.label}
-            </Link>
-          ))}
+        <div className="flex items-center gap-5 sm:gap-7">
           <Link
-            href="/#waitlist"
-            className="border border-[var(--wise-text1)] bg-[var(--wise-text1)] px-4 py-2 text-sm font-medium text-[var(--wise-bg)] transition-colors hover:bg-transparent hover:text-[var(--wise-text1)]"
+            href="/blog"
+            className="flex min-h-[44px] items-center text-sm text-[var(--wise-text2)] transition-colors hover:text-[var(--wise-text1)]"
           >
-            Join Waitlist
+            Blog
           </Link>
+          <a
+            href={APP_STORE_URL}
+            className="btn-press flex min-h-[44px] items-center rounded-xl bg-[var(--wise-accent)] px-4 text-sm font-semibold text-[#1A0E04] hover:bg-[var(--wise-accent-light)]"
+          >
+            Get the app
+          </a>
         </div>
-
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="flex h-9 w-9 items-center justify-center border border-[var(--wise-border)] text-[var(--wise-text1)] md:hidden"
-          aria-label="Toggle menu"
-          aria-expanded={open}
-        >
-          {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
-        </button>
       </div>
-
-      {/* Mobile menu */}
-      {open && (
-        <div className="border-t border-[var(--wise-divider)] bg-[var(--wise-bg)] md:hidden">
-          <div className="mx-auto flex max-w-5xl flex-col gap-1 px-5 py-3 sm:px-8">
-            {links.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="px-3 py-2.5 text-sm text-[var(--wise-text2)] transition-colors hover:text-[var(--wise-text1)]"
-              >
-                {l.label}
-              </Link>
-            ))}
-            <Link
-              href="/#waitlist"
-              onClick={() => setOpen(false)}
-              className="mt-1 border border-[var(--wise-text1)] bg-[var(--wise-text1)] px-3 py-2.5 text-center text-sm font-medium text-[var(--wise-bg)]"
-            >
-              Join Waitlist
-            </Link>
-          </div>
-        </div>
-      )}
     </nav>
   );
 }

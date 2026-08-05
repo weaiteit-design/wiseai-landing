@@ -3,29 +3,29 @@
 /* ─── WiseAI Design Tokens (synced with app: src/theme/tokens.ts) ─── */
 
 :root {
-  /* Backgrounds — deep navy (matches app dark theme) */
+  /* Backgrounds, deep navy (matches app dark theme) */
   --wise-bg: #0B1A2B;
   --wise-surface1: #0F2337;
   --wise-surface2: #132D44;
   --wise-surface3: #1A3A54;
 
-  /* Accent — vibrant orange (interactive elements, CTAs) */
+  /* Accent, vibrant orange (interactive elements, CTAs) */
   --wise-accent: #F97316;
   --wise-accent-light: #FB923C;
   --wise-accent-dim: rgba(249, 115, 22, 0.12);
 
-  /* Secondary — deep turquoise (used sparingly: links, small highlights) */
+  /* Secondary, deep turquoise (used sparingly: links, small highlights) */
   --wise-secondary: #0D9488;
   --wise-secondary-light: #14B8A6;
   --wise-secondary-dim: rgba(13, 148, 136, 0.12);
 
-  /* Text — crisp hierarchy */
+  /* Text, crisp hierarchy */
   --wise-text1: #F5F5F7;
   --wise-text2: #9CA3AF;
   --wise-text3: #6B7280;
   --wise-text4: #4B5563;
 
-  /* Borders — hairlines, not glass */
+  /* Borders, hairlines, not glass */
   --wise-border: rgba(255, 255, 255, 0.12);
   --wise-border-strong: rgba(255, 255, 255, 0.22);
   --wise-divider: rgba(255, 255, 255, 0.08);
@@ -62,6 +62,12 @@
   --animate-fade-in: fade-in 0.5s ease-out forwards;
   --animate-slide-up: slide-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   --animate-marquee: marquee 36s linear infinite;
+  /* Entrance for the hero stack. Spring-ish overshoot so it lands rather than
+     slides, and staggered by animationDelay at each call site. */
+  --animate-rise: rise 0.7s cubic-bezier(0.22, 1.2, 0.36, 1) backwards;
+  /* Idle drift on the mascot. Slow and small on purpose: it should read as
+     alive, not as a loading state. */
+  --animate-float: float 6s ease-in-out infinite;
 }
 
 /* ─── Keyframes ─── */
@@ -74,6 +80,16 @@
 @keyframes slide-up {
   from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(22px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50%      { transform: translateY(-14px) rotate(1deg); }
 }
 
 @keyframes marquee {
@@ -94,7 +110,9 @@
   }
 
   .animate-slide-up,
-  .animate-fade-in {
+  .animate-fade-in,
+  .animate-rise,
+  .animate-float {
     opacity: 1 !important;
     transform: none !important;
   }
@@ -124,7 +142,7 @@ input:focus-visible {
 /* ─── Base Styles ─── */
 
 body {
-  /* Subtle vertical depth — not a decorative blob, just a quiet tonal shift */
+  /* Subtle vertical depth, not a decorative blob, just a quiet tonal shift */
   background: linear-gradient(180deg, #0d1f33 0%, var(--wise-bg) 420px, var(--wise-bg) 100%);
   color: var(--wise-text1);
   font-family: var(--font-inter), "Inter", system-ui, sans-serif;
@@ -407,4 +425,24 @@ body {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   padding: 2px 28px;
+}
+
+
+/* ─── Press feedback ───
+   A small squish on press. Uses transform only, so it never reflows the page,
+   and it is short enough (120ms) to feel like a physical button rather than an
+   animation the user has to wait out. */
+.btn-press {
+  transition: transform 120ms cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 200ms ease,
+              border-color 200ms ease,
+              color 200ms ease;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.btn-press:active {
+  transform: scale(0.96);
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-press:active { transform: none; }
 }

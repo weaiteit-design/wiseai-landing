@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useMemo, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { APP_STORE_URL } from "@/lib/constants";
 import { AI_IQ_TOTAL, buildAttempt, scoreToBand, type IqQuestion } from "@/lib/iq";
@@ -55,12 +54,15 @@ export default function IqTest() {
   if (done) {
     return (
       <div className="flex flex-col items-center px-6 py-16 text-center">
-        <Image
+        {/* Plain <img> for the same reason as the hero: this is an animated
+            WebP and the Next optimizer flattens it to one frame. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src="/mascot/wurtle-celebrate.webp"
           alt=""
-          width={400}
-          height={400}
-          className="animate-rise h-[150px] w-[150px] object-contain"
+          width={300}
+          height={300}
+          className="animate-rise mascot-result object-contain"
         />
 
         <div

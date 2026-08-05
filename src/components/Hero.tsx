@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { APP_STORE_URL } from "@/lib/constants";
 
@@ -29,13 +28,22 @@ export default function Hero() {
       />
 
       <div className="animate-rise" style={{ animationDelay: "0.05s" }}>
-        <Image
+        {/* A plain <img>, deliberately, not next/image.
+            wurtle-wave.webp is a 61-frame ANIMATED WebP. Routed through the
+            Next image optimizer it gets re-encoded and comes out as a frozen
+            single frame, which is the opposite of the point. `unoptimized`
+            fixes that but next/image then contributes nothing here: the asset
+            is a fixed size and already compressed. Explicit width/height keeps
+            the layout reserved, so there is no CLS either way.
+            Verified in the browser: served straight from /mascot, not through
+            /_next/image, and the frames advance. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src="/mascot/wurtle-wave.webp"
           alt="Wurtle, the WiseAI mascot, waving"
-          width={480}
-          height={480}
-          priority
-          className="animate-float h-[150px] w-[150px] object-contain sm:h-[180px] sm:w-[180px]"
+          width={300}
+          height={300}
+          className="animate-float mascot-hero object-contain"
         />
       </div>
 
@@ -59,14 +67,14 @@ export default function Hero() {
       >
         <a
           href={APP_STORE_URL}
-          className="btn-press flex min-h-[56px] items-center justify-center rounded-2xl bg-[var(--wise-accent)] px-8 text-[15px] font-semibold uppercase tracking-[0.06em] text-[#1A0E04] transition-colors duration-200 hover:bg-[var(--wise-accent-light)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--wise-accent-light)]"
+          className="btn-press flex min-h-[56px] items-center justify-center rounded-2xl bg-[var(--wise-accent)] px-8 text-[15px] font-semibold uppercase tracking-[0.06em] text-[#1A0E04] transition-colors duration-150 hover:bg-[var(--wise-accent-light)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--wise-accent-light)]"
         >
           Download on the App Store
         </a>
 
         <Link
           href="/iq"
-          className="btn-press flex min-h-[56px] items-center justify-center rounded-2xl border border-[var(--wise-border-strong)] px-8 text-[15px] font-semibold uppercase tracking-[0.06em] text-[var(--wise-text1)] transition-colors duration-200 hover:border-[var(--wise-accent)] hover:text-[var(--wise-accent-light)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--wise-accent-light)]"
+          className="btn-press flex min-h-[56px] items-center justify-center rounded-2xl border border-[var(--wise-border-strong)] px-8 text-[15px] font-semibold uppercase tracking-[0.06em] text-[var(--wise-text1)] transition-colors duration-150 hover:border-[var(--wise-accent)] hover:text-[var(--wise-accent-light)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--wise-accent-light)]"
         >
           Take the AI IQ test
         </Link>

@@ -5,11 +5,11 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "WiseAI. Master AI Before It Masters You",
     short_name: "WiseAI",
     description:
-      "Daily AI news, bite-sized lessons, 50+ tool comparisons, and AI duels, one app, 15 minutes a day.",
+      "Short daily lessons, real practice, and the AI news that matters. Get good at AI in 10 minutes a day.",
     start_url: "/",
     display: "standalone",
-    background_color: "#0B1A2B",
-    theme_color: "#0B1A2B",
+    background_color: "#FBF6EE",
+    theme_color: "#FBF6EE",
     icons: [
       {
         src: "/wiseai-logo.png",

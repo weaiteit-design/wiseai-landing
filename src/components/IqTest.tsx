@@ -234,7 +234,7 @@ export default function IqTest() {
         type="button"
         onClick={next}
         disabled={!answered}
-        className="btn-press mt-8 flex min-h-[56px] items-center justify-center rounded-2xl bg-[var(--wise-accent)] px-8 text-[15px] font-semibold uppercase tracking-[0.06em] text-[#1A0E04] transition-opacity hover:bg-[var(--wise-accent-light)] disabled:opacity-40"
+        className="btn-press mt-8 flex min-h-[56px] items-center justify-center rounded-2xl bg-[var(--wise-accent)] px-8 text-[15px] font-semibold uppercase tracking-[0.06em] text-white transition-opacity hover:bg-[var(--wise-accent-light)] disabled:opacity-40"
       >
         {index >= AI_IQ_TOTAL - 1 ? "See my result" : "Next"}
       </button>

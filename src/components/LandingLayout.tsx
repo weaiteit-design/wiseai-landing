@@ -97,7 +97,7 @@ export default function LandingLayout({ page }: { page: LandingPage }) {
             <div className="flex flex-col gap-3 sm:flex-row">
             <Link
               href="/iq"
-              className="btn-press flex min-h-[52px] items-center justify-center rounded-2xl bg-[var(--wise-accent)] px-7 text-[14px] font-semibold uppercase tracking-[0.06em] text-[#1A0E04] hover:bg-[var(--wise-accent-light)]"
+              className="btn-press flex min-h-[52px] items-center justify-center rounded-2xl bg-[var(--wise-accent)] px-7 text-[14px] font-semibold uppercase tracking-[0.06em] text-white hover:bg-[var(--wise-accent-light)]"
             >
               Take the AI IQ test
             </Link>
@@ -203,7 +203,7 @@ export default function LandingLayout({ page }: { page: LandingPage }) {
             <div className="flex flex-col gap-3 sm:flex-row">
             <Link
               href="/iq"
-              className="btn-press flex min-h-[52px] items-center justify-center rounded-2xl bg-[var(--wise-accent)] px-7 text-[14px] font-semibold uppercase tracking-[0.06em] text-[#1A0E04] hover:bg-[var(--wise-accent-light)]"
+              className="btn-press flex min-h-[52px] items-center justify-center rounded-2xl bg-[var(--wise-accent)] px-7 text-[14px] font-semibold uppercase tracking-[0.06em] text-white hover:bg-[var(--wise-accent-light)]"
             >
               Take the AI IQ test
             </Link>

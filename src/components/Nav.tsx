@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { APP_STORE_URL } from "@/lib/constants";
 
 /**
@@ -13,17 +12,14 @@ import { APP_STORE_URL } from "@/lib/constants";
  */
 export default function Nav() {
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-[var(--wise-divider)] bg-[var(--wise-bg)]/90 backdrop-blur-md">
+    <nav className="sticky top-0 z-50 w-full border-b border-[var(--wise-divider)] bg-[#FBF6EE]/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-3.5 sm:px-8">
         <Link href="/" className="flex items-center gap-2" aria-label="WiseAI home">
-          <Image
-            src="/wiseai-logo.png"
-            alt="WiseAI"
-            width={500}
-            height={500}
-            className="h-8 w-auto"
-            priority
-          />
+          {/* Text wordmark: every logo PNG in /public is near-white art for
+              the old dark site (avg luminance 227+), invisible on cream. */}
+          <span className="heading-font text-[22px] text-[var(--wise-text1)]">
+            Wise<span className="text-[var(--wise-accent)]">AI</span>
+          </span>
         </Link>
 
         <div className="flex items-center gap-5 sm:gap-7">
@@ -35,7 +31,7 @@ export default function Nav() {
           </Link>
           <a
             href={APP_STORE_URL}
-            className="btn-press flex min-h-[44px] items-center rounded-xl bg-[var(--wise-accent)] px-4 text-sm font-semibold text-[#1A0E04] hover:bg-[var(--wise-accent-light)]"
+            className="btn-press flex min-h-[44px] items-center rounded-xl bg-[var(--wise-accent)] px-4 text-sm font-bold text-white hover:bg-[var(--wise-accent-light)]"
           >
             Get the app
           </a>

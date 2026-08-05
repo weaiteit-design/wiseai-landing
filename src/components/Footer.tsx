@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { SUPPORT_EMAIL } from "@/lib/constants";
 
 /**
@@ -18,7 +17,9 @@ export default function Footer() {
     <footer className="border-t border-[var(--wise-divider)] pb-8 pt-10">
       <div className="flex flex-col items-center gap-8 text-center sm:flex-row sm:items-start sm:justify-between sm:text-left">
         <div className="flex flex-col items-center sm:items-start">
-          <Image src="/wiseai-logo.png" alt="WiseAI" width={500} height={500} className="h-9 w-auto" />
+          <span className="heading-font text-[24px] text-[var(--wise-text1)]">
+            Wise<span className="text-[var(--wise-accent)]">AI</span>
+          </span>
           <p className="mt-2 text-xs text-[var(--wise-text3)]">Your Intelligence, Amplified.</p>
         </div>
 

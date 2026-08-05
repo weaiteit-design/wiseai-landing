@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { APP_STORE_URL } from "@/lib/constants";
 import { AI_IQ_TOTAL, buildAttempt, scoreToBand, type IqQuestion } from "@/lib/iq";
@@ -13,7 +13,16 @@ const TONE: Record<string, string> = {
 };
 
 export default function IqTest() {
-  const [questions, setQuestions] = useState<IqQuestion[]>(() => buildAttempt());
+  // buildAttempt() shuffles with Math.random(), so it must NOT run during SSR.
+  // The server would prerender one question set and the client would hydrate a
+  // different one, which is exactly the hydration mismatch React was reporting
+  // on this page: it discarded the tree and re-rendered, and the visitor saw
+  // one question flash and get replaced by another. Build the attempt on mount,
+  // client-side only.
+  const [questions, setQuestions] = useState<IqQuestion[] | null>(null);
+  useEffect(() => {
+    setQuestions(buildAttempt());
+  }, []);
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
   const [score, setScore] = useState(0);
@@ -23,14 +32,14 @@ export default function IqTest() {
   // teaches exactly these" gives the download a concrete reason.
   const [missed, setMissed] = useState<IqQuestion[]>([]);
 
-  const question = questions[index];
+  const question = questions?.[index];
   const answered = selected !== null;
   const band = useMemo(() => scoreToBand(score), [score]);
   const tone = TONE[band.tone] ?? "var(--wise-accent-light)";
 
   const pick = useCallback(
     (i: number) => {
-      if (answered) return;
+      if (answered || !question) return;
       setSelected(i);
       if (i === question.correctIndex) setScore((s) => s + 1);
       else setMissed((m) => [...m, question]);
@@ -55,6 +64,23 @@ export default function IqTest() {
     setMissed([]);
     setDone(false);
   }, []);
+
+  // First client render before the effect runs. Reserve the same vertical space
+  // the question occupies so the layout does not jump.
+  if (!questions || !question) {
+    return (
+      <div className="mx-auto flex w-full max-w-[620px] flex-col px-6 py-10" aria-busy="true">
+        <div className="h-1.5 w-full rounded-full bg-[var(--wise-surface2)]" />
+        <div className="mt-10 h-[84px] w-full animate-pulse rounded-2xl bg-[var(--wise-surface2)]" />
+        <div className="mt-8 flex flex-col gap-3">
+          {[0, 1, 2, 3].map((i) => (
+            <div key={i} className="h-[56px] animate-pulse rounded-2xl bg-[var(--wise-surface2)]" />
+          ))}
+        </div>
+        <span className="sr-only">Loading your questions</span>
+      </div>
+    );
+  }
 
   // ─── Result ───
   if (done) {

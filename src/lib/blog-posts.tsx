@@ -463,12 +463,11 @@ export const BLOG_POSTS: BlogPost[] = [
         <p>
           We built WiseAI around a specific bet: that learning AI and
           staying current on AI shouldn&apos;t be two different apps. One
-          daily habit gets you a personalized news briefing from 30+
-          sources, bite-sized interactive lessons, a directory of 50+ tools
-          compared honestly, and, for people who like a bit of competition, 
-          AI duels against an honest trainer bot or a friend. We&apos;re
-          launching soon and still early, so some content areas are deeper
-          than others today. If you want the news-plus-lessons-plus-tools
+          daily habit gets you a personalized news briefing from 55
+          tracked sources, 457 bite-sized interactive lessons, a directory
+          of 71 tools compared honestly, and Wurtle Lock, which keeps your
+          distracting apps shut until you finish a lesson. We&apos;re still
+          early, so some content areas are deeper than others today. If you want the news-plus-lessons-plus-tools
           combination in one habit, we think it&apos;s worth trying; if you
           specifically need a university-style certificate, a course
           platform is still the better fit.
@@ -491,9 +490,10 @@ export const BLOG_POSTS: BlogPost[] = [
           different problems.
         </p>
         <p>
-          <strong>Is WiseAI free?</strong> Yes, the core experience
-          (daily updates, lessons, tool directory, duels) is free forever,
-          with an optional Pro tier for unlimited AI chat and deep-reads.
+          <strong>Is WiseAI free?</strong> No. WiseAI is a subscription,
+          $49.99 a year or $9.99 a week. New users get one sample lesson
+          before the paywall, and the AI IQ test on this site is free with
+          no signup.
         </p>
       </>
     ),

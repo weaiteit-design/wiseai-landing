@@ -9,7 +9,7 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 const HEADLINE = "Master AI before it masters you.";
-const TAGLINE = "Daily AI news · bite-sized lessons · 50+ tool comparisons · AI duels";
+const TAGLINE = "Short daily lessons · real practice · the AI news that matters";
 
 export default async function Image() {
   const logo = readFileSync(join(process.cwd(), "public", "wiseai-logo.png"));

@@ -44,7 +44,7 @@ export const LANDING_PAGES: LandingPage[] = [
     slug: "best-ai-learning-app",
     metaTitle: "The Best App to Learn AI in 2026 | WiseAI",
     metaDescription:
-      "What to look for in an AI learning app, and how WiseAI compares: daily AI news, 500+ lessons, 50+ tools, duels, and an AI IQ test. Free to start.",
+      "What to look for in an AI learning app, and how WiseAI compares: daily AI news, 457 lessons, 71 tools, and a free AI IQ test.",
     keywords: [
       "best AI learning app",
       "best app to learn AI",
@@ -61,7 +61,7 @@ export const LANDING_PAGES: LandingPage[] = [
       {
         title: "A daily habit, not a weekend project",
         description:
-          "The best AI learning happens in short, repeated sessions. WiseAI is built around 15 minutes a day, so it becomes routine instead of a course you quit.",
+          "The best AI learning happens in short, repeated sessions. WiseAI is built around 10 minutes a day, so it becomes routine instead of a course you quit.",
       },
       {
         title: "Learn from what is actually happening",
@@ -71,7 +71,7 @@ export const LANDING_PAGES: LandingPage[] = [
       {
         title: "Practice, not passive watching",
         description:
-          "Quizzes, prompt challenges, duels, and spaced repetition make you produce and recall, which is how knowledge sticks.",
+          "Quizzes, prompt challenges, and spaced repetition make you produce and recall, which is how knowledge sticks.",
       },
     ],
     sections: [
@@ -92,8 +92,8 @@ export const LANDING_PAGES: LandingPage[] = [
       {
         heading: "Where WiseAI fits",
         paragraphs: [
-          "WiseAI bundles four things most apps split apart: a personalized daily AI news briefing, 500+ interactive lessons, a directory of 50+ AI tools compared honestly, and gamified practice through duels, an AI IQ test, and spaced repetition.",
-          "The core experience is free forever. WiseAI Pro adds an unlimited AI chat tutor, deep-read articles, advanced lessons, and certificates. It is launching on iOS now, with Android to follow.",
+          "WiseAI bundles four things most apps split apart: a personalized daily AI news briefing, 457 interactive lessons, a directory of 71 AI tools compared honestly, and gamified practice through prompt challenges, an AI IQ test, and spaced repetition.",
+          "WiseAI is a subscription, $49.99 a year or $9.99 a week, and it is live on the App Store. You can gauge your level first with the free AI IQ test on the site, which needs no signup.",
         ],
       },
     ],
@@ -104,7 +104,7 @@ export const LANDING_PAGES: LandingPage[] = [
       },
       {
         q: "Is WiseAI free?",
-        a: "Yes. The core experience is free forever: unlimited daily AI news, unlimited lessons and paths, the full tool directory, daily missions, duels, and streaks. WiseAI Pro is an optional upgrade for unlimited AI chat and deep-reads.",
+        a: "No. WiseAI is a subscription app, $49.99 a year or $9.99 a week. New users get one sample lesson before the paywall, and the AI IQ test on the website is free with no signup.",
       },
       {
         q: "Do I need a technical background?",
@@ -112,7 +112,7 @@ export const LANDING_PAGES: LandingPage[] = [
       },
       {
         q: "How much time does it take each day?",
-        a: "About 15 minutes, structured around four short daily missions. You can do all four or just keep your streak going with one.",
+        a: "About 10 minutes, structured around a short daily session. You can do all four or just keep your streak going with one.",
       },
     ],
     related: [
@@ -126,13 +126,13 @@ export const LANDING_PAGES: LandingPage[] = [
     slug: "duolingo-for-ai",
     metaTitle: "The Duolingo for AI | WiseAI",
     metaDescription:
-      "WiseAI is the Duolingo for AI: daily missions, streaks, XP, duels, and an AI IQ test that turn learning AI into a habit. Free to start.",
+      "WiseAI is the Duolingo for AI: daily missions, streaks, XP, and an AI IQ test that turn learning AI into a habit.",
     keywords: [
       "Duolingo for AI",
       "gamified AI learning",
       "learn AI with streaks",
       "AI learning game",
-      "AI duels app",
+      "AI skills test app",
     ],
     eyebrow: "What is it",
     headline: "The Duolingo for AI",
@@ -146,7 +146,7 @@ export const LANDING_PAGES: LandingPage[] = [
           "Four quick missions a day, XP, badges, and streaks that make coming back tomorrow feel automatic.",
       },
       {
-        title: "Duels, not just lessons",
+        title: "Practice, not just lessons",
         description:
           "Challenge an honest AI Trainer bot or a friend to a prompt battle and climb Bronze-to-Diamond ranks on the weekly leaderboard.",
       },
@@ -174,23 +174,23 @@ export const LANDING_PAGES: LandingPage[] = [
       {
         heading: "How WiseAI does it",
         paragraphs: [
-          "WiseAI wraps 500+ interactive lessons in the gamified loop: daily missions, XP, streaks, ranks, duels, and certificates for finished paths. It also adds something a language app does not need, a daily AI news briefing, so you are always learning the current field.",
-          "The core app is free forever. It is launching on iOS now, with Android to follow.",
+          "WiseAI wraps 457 interactive lessons in the gamified loop: daily missions, XP, streaks, ranks, and certificates for finished paths. It also adds something a language app does not need, a daily AI news briefing, so you are always learning the current field.",
+          "WiseAI is a subscription, $49.99 a year or $9.99 a week, and it is live on the App Store.",
         ],
       },
     ],
     faqs: [
       {
         q: "Is there really a Duolingo for AI?",
-        a: "Yes, WiseAI is built on the same idea: short daily sessions, streaks, XP, duels, and an AI IQ test that make learning AI a habit instead of a chore. The difference is it also keeps you current with daily AI news.",
+        a: "Yes, WiseAI is built on the same idea: short daily sessions, streaks, XP, and an AI IQ test that make learning AI a habit instead of a chore. The difference is it also keeps you current with daily AI news.",
       },
       {
-        q: "What are AI duels?",
+        q: "How does WiseAI make me practice?",
         a: "Head-to-head prompt battles. You can challenge an honest AI Trainer bot that plays it straight, or a friend, get scored, and climb ranks from Bronze to Diamond on the leaderboard.",
       },
       {
         q: "Is it free like Duolingo?",
-        a: "The core experience is free forever, including lessons, daily news, the tool directory, duels, and streaks. WiseAI Pro is an optional upgrade for unlimited AI chat and deep-reads.",
+        a: "No. WiseAI is a subscription app, $49.99 a year or $9.99 a week. The AI IQ test on the website is free and needs no signup.",
       },
       {
         q: "Who is it for?",
@@ -257,14 +257,14 @@ export const LANDING_PAGES: LandingPage[] = [
         heading: "News that actually sticks",
         paragraphs: [
           "Reading a headline is not the same as understanding it. WiseAI connects updates to short lessons and an AI chat tutor grounded in your reading history, so a new model release or technique becomes something you can explain and use.",
-          "The daily briefing is part of the free core experience. WiseAI is launching on iOS now, with Android to follow.",
+          "The daily briefing is included with a WiseAI subscription. WiseAI is live on the App Store.",
         ],
       },
     ],
     faqs: [
       {
         q: "What is the best app to stay updated on AI?",
-        a: "WiseAI is built for exactly this. Each day it picks 25 AI updates from 30+ sources based on your role and condenses them into a 60-second briefing, then ties them to lessons so the news sticks. Free to start.",
+        a: "WiseAI is built for exactly this. Each day it picks 25 AI updates from 30+ sources based on your role and condenses them into a 60-second briefing, then ties them to lessons so the news sticks.",
       },
       {
         q: "How is this different from an AI newsletter?",
@@ -290,7 +290,7 @@ export const LANDING_PAGES: LandingPage[] = [
     slug: "learn-chatgpt",
     metaTitle: "Learn ChatGPT the Practical Way | WiseAI",
     metaDescription:
-      "Learn to actually use ChatGPT for real work with WiseAI: bite-sized lessons, prompt challenges, and honest tool comparisons. Free to start.",
+      "Learn to actually use ChatGPT for real work with WiseAI: bite-sized lessons, prompt challenges, and honest tool comparisons.",
     keywords: [
       "learn ChatGPT",
       "how to use ChatGPT",
@@ -338,15 +338,15 @@ export const LANDING_PAGES: LandingPage[] = [
       {
         heading: "How WiseAI teaches ChatGPT",
         paragraphs: [
-          "WiseAI has lessons and prompt challenges focused on getting real work done with ChatGPT, plus a 50+ tool directory that compares it honestly against Claude, Gemini, and others so you pick the right tool per task.",
-          "The core app is free forever, and it is launching on iOS now with Android to follow.",
+          "WiseAI has lessons and prompt challenges focused on getting real work done with ChatGPT, plus a 71-tool directory that compares it honestly against Claude, Gemini, and others so you pick the right tool per task.",
+          "WiseAI is a subscription, $49.99 a year or $9.99 a week, and it is live on the App Store.",
         ],
       },
     ],
     faqs: [
       {
         q: "How do I learn to use ChatGPT properly?",
-        a: "By practicing on real tasks with feedback, not by memorizing prompt lists. WiseAI teaches ChatGPT through bite-sized lessons and prompt challenges where you write, refine, and get scored. Free to start.",
+        a: "By practicing on real tasks with feedback, not by memorizing prompt lists. WiseAI teaches ChatGPT through bite-sized lessons and prompt challenges where you write, refine, and get scored.",
       },
       {
         q: "Is there a ChatGPT course in the app?",
@@ -372,7 +372,7 @@ export const LANDING_PAGES: LandingPage[] = [
     slug: "learn-claude",
     metaTitle: "Learn Claude the Practical Way | WiseAI",
     metaDescription:
-      "Learn to use Anthropic's Claude for writing, analysis, and code with WiseAI: bite-sized lessons, prompt challenges, and honest tool comparisons. Free to start.",
+      "Learn to use Anthropic's Claude for writing, analysis, and code with WiseAI: bite-sized lessons, prompt challenges, and honest tool comparisons.",
     keywords: [
       "learn Claude",
       "how to use Claude",
@@ -420,8 +420,8 @@ export const LANDING_PAGES: LandingPage[] = [
       {
         heading: "How WiseAI teaches Claude",
         paragraphs: [
-          "WiseAI includes lessons and prompt challenges for Claude, plus a 50+ tool directory that compares Claude honestly against ChatGPT, Gemini, and others so you pick the right tool per task.",
-          "The core app is free forever, launching on iOS now with Android to follow.",
+          "WiseAI includes lessons and prompt challenges for Claude, plus a 71-tool directory that compares Claude honestly against ChatGPT, Gemini, and others so you pick the right tool per task.",
+          "WiseAI is a subscription, $49.99 a year or $9.99 a week, and it is live on the App Store.",
         ],
       },
     ],
@@ -436,7 +436,7 @@ export const LANDING_PAGES: LandingPage[] = [
       },
       {
         q: "Can I learn Claude for free here?",
-        a: "Yes, the core WiseAI experience including lessons and prompt challenges is free forever.",
+        a: "No. WiseAI is a subscription, $49.99 a year or $9.99 a week. The AI IQ test on the website is free and needs no signup.",
       },
       {
         q: "Do I need a Claude subscription?",
@@ -454,7 +454,7 @@ export const LANDING_PAGES: LandingPage[] = [
     slug: "learn-gemini",
     metaTitle: "Learn Gemini the Practical Way | WiseAI",
     metaDescription:
-      "Learn to use Google's Gemini across Gmail, Docs, and Sheets with WiseAI: bite-sized lessons, prompt challenges, and honest tool comparisons. Free to start.",
+      "Learn to use Google's Gemini across Gmail, Docs, and Sheets with WiseAI: bite-sized lessons, prompt challenges, and honest tool comparisons.",
     keywords: [
       "learn Gemini",
       "how to use Gemini",
@@ -502,8 +502,8 @@ export const LANDING_PAGES: LandingPage[] = [
       {
         heading: "How WiseAI teaches Gemini",
         paragraphs: [
-          "WiseAI includes lessons and prompt challenges for Gemini, plus a 50+ tool directory that compares it honestly against ChatGPT, Claude, and others so you pick the right tool per task.",
-          "The core app is free forever, launching on iOS now with Android to follow.",
+          "WiseAI includes lessons and prompt challenges for Gemini, plus a 71-tool directory that compares it honestly against ChatGPT, Claude, and others so you pick the right tool per task.",
+          "WiseAI is a subscription, $49.99 a year or $9.99 a week, and it is live on the App Store.",
         ],
       },
     ],
@@ -518,7 +518,7 @@ export const LANDING_PAGES: LandingPage[] = [
       },
       {
         q: "Is it free to learn Gemini here?",
-        a: "Yes, WiseAI's core lessons and prompt challenges are free forever.",
+        a: "No. WiseAI is a subscription, $49.99 a year or $9.99 a week. The AI IQ test on the website is free and needs no signup.",
       },
       {
         q: "Does WiseAI itself use Gemini?",
@@ -536,7 +536,7 @@ export const LANDING_PAGES: LandingPage[] = [
     slug: "ai-for-work",
     metaTitle: "How to Use AI at Work Without the Overwhelm | WiseAI",
     metaDescription:
-      "Get practical, job-ready AI skills with WiseAI: role-relevant lessons, prompt challenges, honest tool comparisons, and a daily AI briefing. Free to start.",
+      "Get practical, job-ready AI skills with WiseAI: role-relevant lessons, prompt challenges, honest tool comparisons, and a daily AI briefing.",
     keywords: [
       "AI for work",
       "AI skills for professionals",
@@ -556,14 +556,14 @@ export const LANDING_PAGES: LandingPage[] = [
           "Lessons focus on real work: drafting, summarizing, analysis, and using AI for common professional tasks, not data-science theory.",
       },
       {
-        title: "Stay current in 15 minutes",
+        title: "Stay current in 10 minutes",
         description:
           "A daily AI briefing keeps you ahead of what is changing in your field without a research rabbit hole.",
       },
       {
         title: "Pick the right tool",
         description:
-          "An honest 50+ tool directory helps you choose the right AI for a task instead of guessing.",
+          "An honest 71-tool directory helps you choose the right AI for a task instead of guessing.",
       },
     ],
     sections: [
@@ -584,8 +584,8 @@ export const LANDING_PAGES: LandingPage[] = [
       {
         heading: "How WiseAI fits into a workday",
         paragraphs: [
-          "WiseAI is built for 15 minutes a day: read your briefing, finish a lesson, try a prompt challenge, explore a tool. It adapts to your role and goals when you start.",
-          "The core app is free forever. WiseAI Pro adds an unlimited AI chat tutor and deep-reads for people who want to go further. It is launching on iOS now, with Android to follow.",
+          "WiseAI is built for 10 minutes a day: read your briefing, finish a lesson, try a prompt challenge, explore a tool. It adapts to your role and goals when you start.",
+          "WiseAI is a subscription, $49.99 a year or $9.99 a week, and it is live on the App Store.",
         ],
       },
     ],
@@ -604,7 +604,7 @@ export const LANDING_PAGES: LandingPage[] = [
       },
       {
         q: "Is it free?",
-        a: "The core experience is free forever. WiseAI Pro is an optional upgrade for unlimited AI chat and deep-reads.",
+        a: "WiseAI is a subscription, $49.99 a year or $9.99 a week.",
       },
     ],
     related: [

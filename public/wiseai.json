@@ -3,55 +3,60 @@
   "@type": "MobileApplication",
   "@id": "https://www.thewiseai.app/#app",
   "name": "WiseAI",
-  "alternateName": "WiseAI - Master AI Before It Masters You",
+  "alternateName": "WiseAI: Learn AI & AI Updates",
   "url": "https://www.thewiseai.app",
-  "description": "WiseAI is a mobile app that helps you learn AI and stay current in about 15 minutes a day: 25 personalized AI news picks daily, 500+ interactive lessons, 50+ AI tools compared, an AI chat tutor, AI duels, and an AI IQ test. Free to start.",
+  "installUrl": "https://apps.apple.com/app/id6761073614",
+  "description": "WiseAI is an iOS app for getting genuinely good at using AI, in about 10 minutes a day. Short interactive lessons, hands-on practice, a curated daily AI news brief, and Wurtle Lock, a Screen Time feature that locks your distracting apps until you finish a lesson. Requires a subscription.",
   "applicationCategory": "EducationalApplication",
-  "operatingSystem": "iOS, Android",
+  "operatingSystem": "iOS",
   "inLanguage": "en",
-  "releaseNotes": "Pre-launch. Launching on iOS (final App Store review), Android to follow.",
-  "slogan": "Master AI Before It Masters You",
+  "releaseNotes": "Live on the App Store.",
+  "slogan": "Get good at AI in 10 minutes a day",
   "keywords": [
     "learn AI",
-    "AI news app",
     "AI learning app",
-    "Duolingo for AI",
-    "AI tools directory",
+    "AI news app",
+    "AI skills",
+    "screen time blocker",
+    "AI tools compared",
     "prompt engineering",
-    "AI IQ test",
-    "AI literacy"
+    "AI IQ test"
   ],
   "featureList": [
-    "Personalized daily AI news: 25 updates from 30+ sources in a 60-second briefing",
-    "500+ interactive micro-lessons and adaptive learning paths",
-    "50+ AI tools compared with honest ratings, not paid placements",
-    "AI chat tutor powered by Gemini, grounded in the latest AI news",
-    "AI duels and a weekly Bronze-to-Diamond leaderboard",
-    "AI IQ test with a shareable score",
-    "Spaced-repetition review and certificates for finished paths",
-    "Daily missions, XP, streaks, and badges"
+    "457 published interactive lessons across 9 categories",
+    "Wurtle Lock: distracting apps stay locked until you finish a lesson",
+    "A two-minute daily AI news brief, personalized to your role",
+    "71 AI tools compared, with lessons that teach them",
+    "Hands-on prompt practice with feedback",
+    "A free AI IQ test at /iq, no signup required",
+    "Streaks, XP, and a progressive unlock path"
   ],
   "audience": {
     "@type": "Audience",
-    "audienceType": "Students, professionals in non-technical roles, developers, founders, and creators who want to stay AI-fluent"
+    "audienceType": "Busy professionals, students, founders, and creators who want to use AI well at work"
   },
   "offers": [
     {
       "@type": "Offer",
-      "name": "Free",
-      "price": "0",
+      "name": "WiseAI Pro, annual",
+      "price": "49.99",
       "priceCurrency": "USD",
-      "description": "Core experience free forever: unlimited daily AI news, unlimited lessons and paths, the full tool directory, daily missions, duels, streaks, and a taste of the AI chat tutor."
+      "category": "subscription",
+      "description": "Full access, billed yearly. No free trial."
     },
     {
       "@type": "Offer",
-      "name": "WiseAI Pro",
-      "description": "Unlimited AI chat tutor, unlimited deep-read articles, advanced lessons and spaced repetition, certificates, and priority access. Pricing varies by region; see current pricing in the app."
+      "name": "WiseAI Pro, weekly",
+      "price": "9.99",
+      "priceCurrency": "USD",
+      "category": "subscription",
+      "description": "Full access, billed weekly. No free trial."
     }
   ],
   "publisher": {
     "@type": "Organization",
     "name": "WiseAI",
-    "url": "https://www.thewiseai.app"
+    "url": "https://www.thewiseai.app",
+    "email": "manas@thewiseai.app"
   }
 }

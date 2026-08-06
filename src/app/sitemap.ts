@@ -8,6 +8,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: base, lastModified: now, changeFrequency: "weekly", priority: 1 },
+    // The free AI IQ test. Highest-priority page after the homepage: it is the
+    // only thing a visitor can do without paying or installing, so it is the
+    // natural organic entry point. It was missing from the sitemap entirely.
+    { url: `${base}/iq`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     ...LANDING_PAGES.map((page) => ({
       url: `${base}/${page.slug}`,
       lastModified: now,

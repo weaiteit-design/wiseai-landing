@@ -45,6 +45,17 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  // Search Console and Bing Webmaster ownership tokens. Both consoles hand you
+  // a token, then look for it on the live homepage. Set these in Vercel env
+  // vars (NEXT_PUBLIC_GOOGLE_VERIFICATION / NEXT_PUBLIC_BING_VERIFICATION) and
+  // redeploy; leaving one unset simply omits its tag. Once a property is
+  // verified the tag must stay, or the console silently unverifies it later.
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
+    other: process.env.NEXT_PUBLIC_BING_VERIFICATION
+      ? { "msvalidate.01": process.env.NEXT_PUBLIC_BING_VERIFICATION }
+      : {},
+  },
   openGraph: {
     title: "WiseAI: Get Good at AI in 10 Minutes a Day",
     description:

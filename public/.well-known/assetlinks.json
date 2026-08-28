@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.wiseai.app",
+      "sha256_cert_fingerprints": [
+        "01:A1:4C:04:D3:2F:B8:15:F0:2A:23:F8:C6:B1:7C:2C:EB:72:34:EB:1A:6F:A2:09:CC:B8:1C:C5:2E:20:DA:41"
+      ]
+    }
+  }
+]
